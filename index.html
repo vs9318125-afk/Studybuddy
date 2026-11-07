@@ -5,24 +5,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="IjuhPZw_FG7tFD_gMiqeDIS9il__pJ4O4tK3-e7kDK8" />
-<title>StudyBuddy - Your Study Partner</title>
+<title>StudyBuddy 2.0 - Smart Study Partner</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f4f6ff;color:#222}
-header{background:#5146e5;color:white;padding:25px 15px;text-align:center}
-header h1{margin:0;font-size:30px}
-header p{margin:8px 0 0}
-nav{background:white;padding:14px;text-align:center;box-shadow:0 2px 8px #ddd}
-nav a{color:#5146e5;text-decoration:none;margin:0 10px;font-weight:bold}
-.container{max-width:850px;margin:25px auto;padding:15px}
-.card{background:white;padding:20px;border-radius:14px;margin-bottom:18px;box-shadow:0 3px 12px #ddd}
+body{margin:0;font-family:Arial,sans-serif;background:#f3f5ff;color:#222;transition:.2s}
+header{background:linear-gradient(120deg,#5146e5,#8175ff);color:white;padding:28px 15px;text-align:center}
+header h1{margin:0;font-size:32px}
+nav{background:white;padding:14px;text-align:center;box-shadow:0 2px 8px #ddd;position:sticky;top:0;z-index:2}
+nav a{color:#5146e5;text-decoration:none;margin:7px;font-weight:bold;display:inline-block}
+.container{max-width:900px;margin:22px auto;padding:12px}
+.card{background:white;padding:20px;border-radius:15px;margin-bottom:18px;box-shadow:0 3px 12px #ddd}
 h2{color:#5146e5;margin-top:0}
-input,textarea{width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:8px;font-size:15px}
-button{background:#5146e5;color:white;border:0;padding:11px 18px;border-radius:8px;cursor:pointer;font-size:15px}
+input,textarea,select{width:100%;padding:12px;margin:7px 0;border:1px solid #ccc;border-radius:8px;font-size:15px}
+button{background:#5146e5;color:white;border:0;padding:11px 16px;border-radius:8px;cursor:pointer;margin:4px}
 button:hover{background:#3930b5}
-.task{padding:10px;background:#f0efff;margin:8px 0;border-radius:8px;display:flex;justify-content:space-between;gap:10px}
+.task{padding:11px;background:#f0efff;margin:8px 0;border-radius:8px;display:flex;justify-content:space-between;align-items:center;gap:8px;overflow-wrap:anywhere}
+#timer{font-size:45px;font-weight:bold;text-align:center;margin:15px}
+#progressBar{height:18px;background:#ddd;border-radius:20px;overflow:hidden}
+#progressFill{height:100%;width:0;background:#5146e5;transition:.3s}
+.flashcard{background:#eeeaff;padding:35px 15px;text-align:center;border-radius:12px;font-size:20px;min-height:100px;margin:15px 0}
+.option{display:block;width:100%;text-align:left;background:#eeeaff;color:#222;margin:8px 0}
 footer{text-align:center;padding:20px;color:#777}
-#timer{font-size:42px;font-weight:bold;text-align:center;margin:15px}
+body.dark{background:#171827;color:#eee}
+body.dark nav,body.dark .card{background:#25273a;color:#eee}
+body.dark nav a{color:#aaa5ff}
+body.dark input,body.dark textarea,body.dark select{background:#33364d;color:white;border-color:#555}
+body.dark .task,body.dark .flashcard,body.dark .option{background:#353750;color:white}
+.small{color:#777;font-size:13px}
 </style>
 </head>
 <body>
@@ -30,36 +39,67 @@ footer{text-align:center;padding:20px;color:#777}
 <header>
 <h1>📚 StudyBuddy</h1>
 <p>Your Smart Study Partner</p>
+<p>Learn Better • Stay Focused • Achieve More</p>
+<button onclick="toggleDark()">🌙 Dark Mode</button>
 </header>
 
 <nav>
-<a href="#home">Home</a>
 <a href="#notes">Notes</a>
 <a href="#tasks">Tasks</a>
-<a href="#timerbox">Study Timer</a>
+<a href="#timetable">Timetable</a>
+<a href="#quiz">Quiz</a>
+<a href="#flashcards">Flashcards</a>
+<a href="#timerbox">Timer</a>
+<a href="#progress">Progress</a>
 </nav>
 
 <div class="container">
 
-<section class="card" id="home">
-<h2>Welcome to StudyBuddy! 👋</h2>
-<p>Organise your studies, make notes and stay focused.</p>
-<p>✨ Learn Better • Stay Focused • Achieve More</p>
+<section class="card">
+<h2>👋 Welcome to StudyBuddy!</h2>
+<p>Your personal study space. Plan your day, practise questions and track your progress.</p>
 </section>
 
 <section class="card" id="notes">
 <h2>📝 My Notes</h2>
-<input id="noteTitle" placeholder="Enter note title">
-<textarea id="noteText" rows="4" placeholder="Write your notes here..."></textarea>
+<input id="noteTitle" placeholder="Note title">
+<textarea id="noteText" rows="3" placeholder="Write your notes..."></textarea>
 <button onclick="saveNote()">Save Note</button>
 <div id="notesList"></div>
 </section>
 
 <section class="card" id="tasks">
-<h2>✅ Study To-Do List</h2>
+<h2>✅ To-Do List</h2>
 <input id="taskInput" placeholder="Enter your study task">
 <button onclick="addTask()">Add Task</button>
 <div id="taskList"></div>
+</section>
+
+<section class="card" id="timetable">
+<h2>📅 Study Timetable</h2>
+<input id="subject" placeholder="Subject name">
+<input id="studyTime" type="time">
+<button onclick="addSchedule()">Add to Timetable</button>
+<div id="scheduleList"></div>
+</section>
+
+<section class="card" id="quiz">
+<h2>🧠 Quick Quiz</h2>
+<p id="question">Loading question...</p>
+<div id="options"></div>
+<p id="quizResult"></p>
+<p id="score"></p>
+<button onclick="nextQuestion()">Next Question ➜</button>
+</section>
+
+<section class="card" id="flashcards">
+<h2>📖 Flashcards</h2>
+<input id="flashQ" placeholder="Enter question">
+<input id="flashA" placeholder="Enter answer">
+<button onclick="addFlashcard()">Add Flashcard</button>
+<div class="flashcard" id="flashDisplay">Your flashcards will appear here.</div>
+<button onclick="showAnswer()">Show Answer</button>
+<button onclick="nextFlashcard()">Next Card ➜</button>
 </section>
 
 <section class="card" id="timerbox">
@@ -70,80 +110,135 @@ footer{text-align:center;padding:20px;color:#777}
 <button onclick="pauseTimer()">Pause</button>
 <button onclick="resetTimer()">Reset</button>
 </div>
+<p class="small" style="text-align:center">Focus for 25 minutes, then take a short break!</p>
+</section>
+
+<section class="card" id="progress">
+<h2>📊 My Study Progress</h2>
+<p id="progressText">0 of 0 tasks completed</p>
+<div id="progressBar"><div id="progressFill"></div></div>
+<p id="progressPercent">0% completed</p>
 </section>
 
 </div>
 
 <footer>
-<p>Made with ❤️ for Students | StudyBuddy</p>
+<p>Made with ❤️ for Students</p>
+<p>StudyBuddy © 2026</p>
 </footer>
 
 <script>
+function getData(key){return JSON.parse(localStorage.getItem(key)||"[]")}
+function saveData(key,data){localStorage.setItem(key,JSON.stringify(data))}
+function safe(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+
+function toggleDark(){
+document.body.classList.toggle("dark");
+localStorage.setItem("sbdark",document.body.classList.contains("dark"));
+}
+if(localStorage.getItem("sbdark")==="true")document.body.classList.add("dark");
+
 function saveNote(){
-let title=document.getElementById("noteTitle").value.trim();
-let text=document.getElementById("noteText").value.trim();
-if(!title||!text){alert("Please enter title and notes");return;}
-let notes=JSON.parse(localStorage.getItem("sbnotes")||"[]");
-notes.push({title,text});
-localStorage.setItem("sbnotes",JSON.stringify(notes));
-document.getElementById("noteTitle").value="";
-document.getElementById("noteText").value="";
-showNotes();
+let title=noteTitle.value.trim(),text=noteText.value.trim();
+if(!title||!text)return alert("Enter title and notes");
+let a=getData("sbnotes");a.push({title,text});saveData("sbnotes",a);
+noteTitle.value="";noteText.value="";showNotes();
 }
 function showNotes(){
-let notes=JSON.parse(localStorage.getItem("sbnotes")||"[]");
-document.getElementById("notesList").innerHTML=notes.map((n,i)=>
-`<div class="task"><span><b>${escapeHTML(n.title)}</b><br>${escapeHTML(n.text)}</span><button onclick="deleteNote(${i})">Delete</button></div>`).join("");
+notesList.innerHTML=getData("sbnotes").map((n,i)=>
+`<div class="task"><span><b>${safe(n.title)}</b><br>${safe(n.text)}</span><button onclick="deleteNote(${i})">Delete</button></div>`).join("");
 }
-function deleteNote(i){
-let notes=JSON.parse(localStorage.getItem("sbnotes")||"[]");
-notes.splice(i,1);
-localStorage.setItem("sbnotes",JSON.stringify(notes));
-showNotes();
-}
-function escapeHTML(s){
-return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-}
+function deleteNote(i){let a=getData("sbnotes");a.splice(i,1);saveData("sbnotes",a);showNotes();}
+
 function addTask(){
-let input=document.getElementById("taskInput");
-let task=input.value.trim();
-if(!task)return;
-let tasks=JSON.parse(localStorage.getItem("sbtasks")||"[]");
-tasks.push(task);
-localStorage.setItem("sbtasks",JSON.stringify(tasks));
-input.value="";
-showTasks();
+let v=taskInput.value.trim();if(!v)return;
+let a=getData("sbtasks");a.push({text:v,done:false});saveData("sbtasks",a);
+taskInput.value="";showTasks();
 }
 function showTasks(){
-let tasks=JSON.parse(localStorage.getItem("sbtasks")||"[]");
-document.getElementById("taskList").innerHTML=tasks.map((t,i)=>
-`<div class="task"><span>${escapeHTML(t)}</span><button onclick="deleteTask(${i})">Done</button></div>`).join("");
+let a=getData("sbtasks");
+taskList.innerHTML=a.map((t,i)=>
+`<div class="task"><span>${t.done?"✅ ":""}${safe(t.text)}</span><button onclick="completeTask(${i})">${t.done?"Undo":"Done"}</button><button onclick="deleteTask(${i})">Delete</button></div>`).join("");
+updateProgress();
 }
-function deleteTask(i){
-let tasks=JSON.parse(localStorage.getItem("sbtasks")||"[]");
-tasks.splice(i,1);
-localStorage.setItem("sbtasks",JSON.stringify(tasks));
-showTasks();
+function completeTask(i){let a=getData("sbtasks");a[i].done=!a[i].done;saveData("sbtasks",a);showTasks();}
+function deleteTask(i){let a=getData("sbtasks");a.splice(i,1);saveData("sbtasks",a);showTasks();}
+function updateProgress(){
+let a=getData("sbtasks"),done=a.filter(t=>t.done).length;
+let p=a.length?Math.round(done/a.length*100):0;
+progressText.textContent=done+" of "+a.length+" tasks completed";
+progressFill.style.width=p+"%";progressPercent.textContent=p+"% completed";
 }
+
+function addSchedule(){
+let s=subject.value.trim(),t=studyTime.value;
+if(!s||!t)return alert("Enter subject and time");
+let a=getData("sbschedule");a.push({s,t});a.sort((x,y)=>x.t.localeCompare(y.t));saveData("sbschedule",a);
+subject.value="";studyTime.value="";showSchedule();
+}
+function showSchedule(){
+scheduleList.innerHTML=getData("sbschedule").map((x,i)=>
+`<div class="task"><span>⏰ ${safe(x.t)} — ${safe(x.s)}</span><button onclick="deleteSchedule(${i})">Delete</button></div>`).join("");
+}
+function deleteSchedule(i){let a=getData("sbschedule");a.splice(i,1);saveData("sbschedule",a);showSchedule();}
+
+const questions=[
+{q:"Which planet is known as the Red Planet?",o:["Earth","Mars","Jupiter","Venus"],a:1},
+{q:"What is the chemical formula of water?",o:["CO2","O2","H2O","NaCl"],a:2},
+{q:"How many days are there in a leap year?",o:["365","366","364","360"],a:1},
+{q:"Which gas do plants absorb?",o:["Oxygen","Nitrogen","Carbon dioxide","Hydrogen"],a:2},
+{q:"What is 12 × 8?",o:["88","96","108","86"],a:1}
+];
+let qi=0,quizScore=0,answered=false;
+function loadQuestion(){
+let q=questions[qi];answered=false;
+question.textContent=(qi+1)+". "+q.q;
+options.innerHTML=q.o.map((x,i)=>`<button class="option" onclick="checkAnswer(${i})">${safe(x)}</button>`).join("");
+quizResult.textContent="";
+score.textContent="Score: "+quizScore;
+}
+function checkAnswer(i){
+if(answered)return;answered=true;
+let correct=questions[qi].a;
+if(i===correct){quizScore++;quizResult.textContent="✅ Correct answer!";}
+else quizResult.textContent="❌ Incorrect. Correct answer: "+questions[qi].o[correct];
+score.textContent="Score: "+quizScore;
+}
+function nextQuestion(){qi=(qi+1)%questions.length;if(qi===0)quizScore=0;loadQuestion();}
+
+let flashIndex=0,flashShown=false;
+function addFlashcard(){
+let q=flashQ.value.trim(),a=flashA.value.trim();if(!q||!a)return alert("Enter question and answer");
+let cards=getData("sbflash");cards.push({q,a});saveData("sbflash",cards);
+flashQ.value="";flashA.value="";flashIndex=cards.length-1;displayFlash();
+}
+function displayFlash(){
+let a=getData("sbflash");
+if(!a.length){flashDisplay.textContent="No flashcards yet. Add one above!";return;}
+if(flashIndex>=a.length)flashIndex=0;
+flashShown=false;flashDisplay.textContent=a[flashIndex].q;
+}
+function showAnswer(){
+let a=getData("sbflash");if(!a.length)return;
+flashShown=true;flashDisplay.textContent=a[flashIndex].a;
+}
+function nextFlashcard(){let a=getData("sbflash");if(!a.length)return;flashIndex=(flashIndex+1)%a.length;displayFlash();}
+
 let seconds=1500,interval=null;
 function updateTimer(){
-let m=Math.floor(seconds/60),s=seconds%60;
-document.getElementById("timer").textContent=
-String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
+timer.textContent=String(Math.floor(seconds/60)).padStart(2,"0")+":"+String(seconds%60).padStart(2,"0");
 }
 function startTimer(){
 if(interval)return;
 interval=setInterval(()=>{
 if(seconds>0){seconds--;updateTimer();}
-else{clearInterval(interval);interval=null;alert("Great! Study session completed 🎉");}
+else{pauseTimer();alert("Great! Study session completed 🎉");}
 },1000);
 }
 function pauseTimer(){clearInterval(interval);interval=null;}
 function resetTimer(){pauseTimer();seconds=1500;updateTimer();}
-showNotes();
-showTasks();
-updateTimer();
+
+showNotes();showTasks();showSchedule();loadQuestion();displayFlash();updateTimer();
 </script>
 </body>
-  </html>
-
+</html>
