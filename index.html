@@ -37,6 +37,19 @@ body.dark .task,body.dark .flashcard,body.dark .option{background:#353750;color:
 <body>
 
 <header>
+  <div class="container">
+<section class="card" id="auth">
+<h2>🔐 StudyBuddy Account</h2>
+<input type="text" id="studentName" placeholder="Your Name">
+<input type="email" id="email" placeholder="Email Address">
+<input type="password" id="password" placeholder="Password">
+<button onclick="signup()">Create Account</button>
+<button onclick="login()">Login</button>
+<button onclick="forgotPassword()">Forgot Password?</button>
+<button onclick="logout()">Logout</button>
+<p id="authMessage">Welcome to StudyBuddy!</p>
+</section>
+  </div>
 <h1>📚 StudyBuddy</h1>
 <p>Your Smart Study Partner</p>
 <p>Learn Better • Stay Focused • Achieve More</p>
@@ -240,5 +253,93 @@ function resetTimer(){pauseTimer();seconds=1500;updateTimer();}
 
 showNotes();showTasks();showSchedule();loadQuestion();displayFlash();updateTimer();
 </script>
+ 
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-app.js";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
+  signOut,
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAlRnJF1uKWP2XTSVnS1y5_9jg6hx5J0ns",
+  authDomain: "studybuddy-75864.firebaseapp.com",
+  projectId: "studybuddy-75864",
+  storageBucket: "studybuddy-75864.firebasestorage.app",
+  messagingSenderId: "1011565103905",
+  appId: "1:1011565103905:web:492517c69352e67b2e8c60",
+  measurementId: "G-V1Z0HN1TVD"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+window.signup = async function() {
+  const name = document.getElementById("studentName").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+
+  if (!name || !email || !password) {
+    authMessage.textContent = "Please fill all fields.";
+    return;
+  }
+
+  try {
+    const result = await createUserWithEmailAndPassword(auth, email, password);
+    await import("https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js")
+      .then(m => m.updateProfile(result.user, {displayName: name}));
+    authMessage.textContent = "Account created successfully! Welcome " + name;
+  } catch (error) {
+    authMessage.textContent = error.message;
+  }
+};
+
+window.login = async function() {
+  try {
+    await signInWithEmailAndPassword(
+      auth,
+      document.getElementById("email").value.trim(),
+      document.getElementById("password").value
+    );
+    authMessage.textContent = "Login successful!";
+  } catch (error) {
+    authMessage.textContent = error.message;
+  }
+};
+
+window.forgotPassword = async function() {
+  const email = document.getElementById("email").value.trim();
+  if (!email) {
+    authMessage.textContent = "Enter your email first.";
+    return;
+  }
+  try {
+    await sendPasswordResetEmail(auth, email);
+    authMessage.textContent = "Password reset email sent!";
+  } catch (error) {
+    authMessage.textContent = error.message;
+  }
+};
+
+window.logout = async function() {
+  try {
+    await signOut(auth);
+    authMessage.textContent = "You are logged out.";
+  } catch (error) {
+    authMessage.textContent = error.message;
+  }
+};
+
+onAuthStateChanged(auth, user => {
+  if (user) {
+    authMessage.textContent = "Logged in as " + (user.email || "");
+  }
+});
+</script>
+ 
 </body>
 </html>
