@@ -1,4 +1,4 @@
-
+lo
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -296,8 +296,7 @@ window.signup = async function() {
 
   try {
     const result = await createUserWithEmailAndPassword(auth, email, password);
-    await import("https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js")
-      .then(m => m.updateProfile(result.user, {displayName: name}));
+   await updateProfile(result.user, { displayName: name }); 
     authMessage.textContent = "Account created successfully! Welcome " + name;
   } catch (error) {
     authMessage.textContent = error.message;
