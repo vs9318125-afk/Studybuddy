@@ -1,1 +1,149 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="IjuhPZw_FG7tFD_gMiqeDIS9il__pJ4O4tK3-e7kDK8" />
+<title>StudyBuddy - Your Study Partner</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f6ff;color:#222}
+header{background:#5146e5;color:white;padding:25px 15px;text-align:center}
+header h1{margin:0;font-size:30px}
+header p{margin:8px 0 0}
+nav{background:white;padding:14px;text-align:center;box-shadow:0 2px 8px #ddd}
+nav a{color:#5146e5;text-decoration:none;margin:0 10px;font-weight:bold}
+.container{max-width:850px;margin:25px auto;padding:15px}
+.card{background:white;padding:20px;border-radius:14px;margin-bottom:18px;box-shadow:0 3px 12px #ddd}
+h2{color:#5146e5;margin-top:0}
+input,textarea{width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:8px;font-size:15px}
+button{background:#5146e5;color:white;border:0;padding:11px 18px;border-radius:8px;cursor:pointer;font-size:15px}
+button:hover{background:#3930b5}
+.task{padding:10px;background:#f0efff;margin:8px 0;border-radius:8px;display:flex;justify-content:space-between;gap:10px}
+footer{text-align:center;padding:20px;color:#777}
+#timer{font-size:42px;font-weight:bold;text-align:center;margin:15px}
+</style>
+</head>
+<body>
+
+<header>
+<h1>📚 StudyBuddy</h1>
+<p>Your Smart Study Partner</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#notes">Notes</a>
+<a href="#tasks">Tasks</a>
+<a href="#timerbox">Study Timer</a>
+</nav>
+
+<div class="container">
+
+<section class="card" id="home">
+<h2>Welcome to StudyBuddy! 👋</h2>
+<p>Organise your studies, make notes and stay focused.</p>
+<p>✨ Learn Better • Stay Focused • Achieve More</p>
+</section>
+
+<section class="card" id="notes">
+<h2>📝 My Notes</h2>
+<input id="noteTitle" placeholder="Enter note title">
+<textarea id="noteText" rows="4" placeholder="Write your notes here..."></textarea>
+<button onclick="saveNote()">Save Note</button>
+<div id="notesList"></div>
+</section>
+
+<section class="card" id="tasks">
+<h2>✅ Study To-Do List</h2>
+<input id="taskInput" placeholder="Enter your study task">
+<button onclick="addTask()">Add Task</button>
+<div id="taskList"></div>
+</section>
+
+<section class="card" id="timerbox">
+<h2>⏰ Focus Study Timer</h2>
+<div id="timer">25:00</div>
+<div style="text-align:center">
+<button onclick="startTimer()">Start</button>
+<button onclick="pauseTimer()">Pause</button>
+<button onclick="resetTimer()">Reset</button>
+</div>
+</section>
+
+</div>
+
+<footer>
+<p>Made with ❤️ for Students | StudyBuddy</p>
+</footer>
+
+<script>
+function saveNote(){
+let title=document.getElementById("noteTitle").value.trim();
+let text=document.getElementById("noteText").value.trim();
+if(!title||!text){alert("Please enter title and notes");return;}
+let notes=JSON.parse(localStorage.getItem("sbnotes")||"[]");
+notes.push({title,text});
+localStorage.setItem("sbnotes",JSON.stringify(notes));
+document.getElementById("noteTitle").value="";
+document.getElementById("noteText").value="";
+showNotes();
+}
+function showNotes(){
+let notes=JSON.parse(localStorage.getItem("sbnotes")||"[]");
+document.getElementById("notesList").innerHTML=notes.map((n,i)=>
+`<div class="task"><span><b>${escapeHTML(n.title)}</b><br>${escapeHTML(n.text)}</span><button onclick="deleteNote(${i})">Delete</button></div>`).join("");
+}
+function deleteNote(i){
+let notes=JSON.parse(localStorage.getItem("sbnotes")||"[]");
+notes.splice(i,1);
+localStorage.setItem("sbnotes",JSON.stringify(notes));
+showNotes();
+}
+function escapeHTML(s){
+return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function addTask(){
+let input=document.getElementById("taskInput");
+let task=input.value.trim();
+if(!task)return;
+let tasks=JSON.parse(localStorage.getItem("sbtasks")||"[]");
+tasks.push(task);
+localStorage.setItem("sbtasks",JSON.stringify(tasks));
+input.value="";
+showTasks();
+}
+function showTasks(){
+let tasks=JSON.parse(localStorage.getItem("sbtasks")||"[]");
+document.getElementById("taskList").innerHTML=tasks.map((t,i)=>
+`<div class="task"><span>${escapeHTML(t)}</span><button onclick="deleteTask(${i})">Done</button></div>`).join("");
+}
+function deleteTask(i){
+let tasks=JSON.parse(localStorage.getItem("sbtasks")||"[]");
+tasks.splice(i,1);
+localStorage.setItem("sbtasks",JSON.stringify(tasks));
+showTasks();
+}
+let seconds=1500,interval=null;
+function updateTimer(){
+let m=Math.floor(seconds/60),s=seconds%60;
+document.getElementById("timer").textContent=
+String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
+}
+function startTimer(){
+if(interval)return;
+interval=setInterval(()=>{
+if(seconds>0){seconds--;updateTimer();}
+else{clearInterval(interval);interval=null;alert("Great! Study session completed 🎉");}
+},1000);
+}
+function pauseTimer(){clearInterval(interval);interval=null;}
+function resetTimer(){pauseTimer();seconds=1500;updateTimer();}
+showNotes();
+showTasks();
+updateTimer();
+</script>
+</body>
+  </html>
+
