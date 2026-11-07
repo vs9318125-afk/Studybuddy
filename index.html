@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Free study notes and useful online student tools in Hindi and English.">
+<title>StudyBuddy — Free Study Notes & Tools</title>
+<style>
+:root{--ink:#18233b;--muted:#64748b;--brand:#4f46e5;--brand2:#06b6d4;--paper:#f5f7ff;--card:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:Arial, sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
+header{background:linear-gradient(120deg,#312e81,#4f46e5 55%,#0891b2);color:#fff;padding:22px 5% 54px}
+nav{display:flex;justify-content:space-between;align-items:center;gap:15px;max-width:1100px;margin:auto}
+.logo{font-size:22px;font-weight:800}nav a{color:#fff;text-decoration:none;margin-left:18px;font-size:14px}
+.hero{max-width:1100px;margin:48px auto 0}.hero h1{font-size:clamp(30px,5vw,48px);line-height:1.1;margin:0 0 14px}.hero p{max-width:620px;color:#e0e7ff;font-size:17px}
+.wrap{max-width:1100px;margin:-25px auto 50px;padding:0 18px}.section-title{margin:36px 0 14px;font-size:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card{background:var(--card);border-radius:17px;padding:20px;box-shadow:0 8px 28px #1e293b0d;border:1px solid #e8ebf5}
+.card h3{margin:4px 0 8px}.card p{color:var(--muted);margin:0 0 14px;font-size:14px}
+.tag{display:inline-block;background:#eef2ff;color:#4338ca;border-radius:30px;padding:4px 10px;font-size:12px;font-weight:700}
+input,select,textarea{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:10px;font:inherit;margin:7px 0 12px;background:white}
+button,.btn{border:0;border-radius:10px;background:var(--brand);color:white;padding:11px 16px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+button:hover,.btn:hover{filter:brightness(.93)}.result{margin-top:10px;padding:10px;background:#ecfeff;border-radius:10px;color:#155e75;min-height:42px}
+.note{border-left:4px solid var(--brand2);padding:10px 14px;background:#ecfeff;border-radius:8px;color:#164e63}
+footer{text-align:center;padding:26px;color:var(--muted);font-size:13px}
+.small{font-size:12px;color:var(--muted)}.subject{margin-bottom:10px}
+@media(max-width:600px){nav a{margin-left:8px;font-size:12px}.hero{margin-top:35px}}
+</style>
+</head>
+<body>
+<header>
+  <nav><div class="logo">📘 StudyBuddy</div><div><a href="#tools">Student Tools</a><a href="#notes">Notes</a></div></nav>
+  <div class="hero">
+    <span class="tag">100% FREE STARTER WEBSITE</span>
+    <h1>Study smart.<br>Learn better.</h1>
+    <p>Students ke liye free notes aur daily-use online tools — simple, fast aur mobile-friendly.</p>
+  </div>
+</header>
+<main class="wrap">
+  <h2 class="section-title" id="tools">⚡ Free Student Tools</h2>
+  <div class="grid">
+    <section class="card">
+      <h3>Age Calculator</h3><p>Date of birth se age calculate karo.</p>
+      <label for="dob">Date of birth</label><input id="dob" type="date">
+      <button onclick="ageCalc()">Calculate age</button><div class="result" id="ageResult" aria-live="polite">Your result will appear here.</div>
+    </section>
+    <section class="card">
+      <h3>Percentage Calculator</h3><p>Marks ka percentage seconds mein nikalo.</p>
+      <label for="obtained">Marks obtained</label><input id="obtained" type="number" min="0" placeholder="e.g. 420">
+      <label for="total">Total marks</label><input id="total" type="number" min="1" placeholder="e.g. 500">
+      <button onclick="percentCalc()">Calculate percentage</button><div class="result" id="percentResult" aria-live="polite">Your result will appear here.</div>
+    </section>
+    <section class="card">
+      <h3>Word Counter</h3><p>Apne answer ya paragraph ke words count karo.</p>
+      <label for="words">Paste your text</label><textarea id="words" rows="4" placeholder="Type or paste text here..."></textarea>
+      <button onclick="wordCalc()">Count words</button><div class="result" id="wordResult" aria-live="polite">Your result will appear here.</div>
+    </section>
+  </div>
+
+  <h2 class="section-title" id="notes">📚 Study Notes</h2>
+  <div class="grid">
+    <article class="card subject"><span class="tag">Class 10</span><h3>Science — Quick Revision</h3><p>Important definitions, formulas aur chapter-wise revision notes yahan add honge.</p><p class="small">Starter sample: प्रकाश संश्लेषण — हरे पौधे सूर्य के प्रकाश की उपस्थिति में भोजन बनाते हैं।</p></article>
+    <article class="card subject"><span class="tag">Class 11</span><h3>Business Studies</h3><p>Easy definitions, short answers aur exam-ready points yahan add honge.</p><p class="small">Starter sample: Business risk — व्यवसाय में अनिश्चितताओं के कारण हानि होने की संभावना।</p></article>
+    <article class="card subject"><span class="tag">Class 12</span><h3>Exam Preparation</h3><p>Chapter summaries, practice questions aur revision checklists yahan add honge.</p><p class="small">Apne original notes/PDFs upload karne ke baad yahan links add karo.</p></article>
+  </div>
+  <h2 class="section-title">✨ Website ko grow kaise karein?</h2>
+  <div class="card">
+    <p class="note"><b>Shuruaat:</b> Apne banaye hue notes aur useful tools add karo. Kisi book/website ka copyrighted content bina permission copy mat karo.</p>
+    <p>Regularly useful content publish karo, mobile par test karo, aur students ke saath share karo. Ads se earning tabhi possible hogi jab website par original/useful content aur visitors hon; income guaranteed nahi hoti.</p>
+    <p class="small">Privacy note: Ye starter tools data ko server par save nahi karte. Age calculator date ko sirf browser mein process karta hai.</p>
+  </div>
+</main>
+<footer>© <span id="year"></span> StudyBuddy · Made for learners</footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+function ageCalc(){
+ const v=document.getElementById('dob').value, out=document.getElementById('ageResult');
+ if(!v){out.textContent='Please select your date of birth.';return}
+ const b=new Date(v+'T00:00:00'), t=new Date();
+ if(b>t){out.textContent='Date of birth cannot be in the future.';return}
+ let y=t.getFullYear()-b.getFullYear(),m=t.getMonth()-b.getMonth(),d=t.getDate()-b.getDate();
+ if(d<0){m--;d+=new Date(t.getFullYear(),t.getMonth(),0).getDate()}
+ if(m<0){y--;m+=12}
+ out.textContent=`Your age: ${y} years, ${m} months and ${d} days.`;
+}
+function percentCalc(){
+ const a=Number(document.getElementById('obtained').value),b=Number(document.getElementById('total').value),out=document.getElementById('percentResult');
+ if(document.getElementById('obtained').value===''||document.getElementById('total').value===''||b<=0||a<0||a>b){out.textContent='Valid marks enter karo. Obtained marks total se zyada nahi hone chahiye.';return}
+ out.textContent=`Percentage: ${(a/b*100).toFixed(2)}%`;
+}
+function wordCalc(){
+ const s=document.getElementById('words').value.trim(), count=s?s.split(/\s+/).length:0;
+ document.getElementById('wordResult').textContent=`Words: ${count} · Characters: ${document.getElementById('words').value.length}`;
+}
+</script>
+</body>
+</html>
