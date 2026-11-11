@@ -1,310 +1,183 @@
-lolo
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="IjuhPZw_FG7tFD_gMiqeDIS9il__pJ4O4tK3-e7kDK8" />
-<title>StudyBuddy 2.0 - Smart Study Partner</title>
-
+<meta name="google-site-verification" content="IjuhPZw_FG7tFD_gMiqeDIS9il__pJ4O4tK3-e7kDK8">
+<meta name="theme-color" content="#0b63ce">
+<meta name="description" content="Learnify India - Smart learning for RBSE and CBSE students from Class 5 to 12.">
+<title>Learnify India | Smart Study Partner</title>
 <style>
+:root{--blue:#0756b5;--blue2:#1685e8;--ink:#172b4d;--muted:#71839b;--bg:#f3f7fd;--card:#fff;--line:#e2ebf6;--soft:#edf5ff;--shadow:0 8px 26px rgba(20,80,150,.08)}
 *{box-sizing:border-box}
-body{
- margin:0;
- font-family:Arial,sans-serif;
- background:#f4f8ff;
- color:#172b4d;
- transition:.3s;
-}
-header{
- background:linear-gradient(120deg,#0756b5,#1685e8);
- color:white;
- padding:35px 15px;
- text-align:center;
-}
-header h1{margin:0;font-size:34px}
-header p{margin:10px 0 0}
-nav{
- background:white;
- padding:15px;
- text-align:center;
- box-shadow:0 3px 12px #dce8f5;
- position:sticky;
- top:0;
- z-index:2;
-}
-nav a{
- color:#0756b5;
- text-decoration:none;
- margin:7px;
- font-weight:bold;
- display:inline-block;
-}
-.container{max-width:1100px;margin:24px auto;padding:12px}
-.card{
- background:white;
- padding:22px;
- border-radius:16px;
- margin-bottom:20px;
- box-shadow:0 5px 20px rgba(20,80,150,.09);
- border:1px solid #e5effb;
-}
-h2{color:#0756b5;margin-top:0}
-input,textarea,select{
- width:100%;
- padding:13px;
- margin:8px 0;
- border:1px solid #cbdcf0;
- border-radius:9px;
- font-size:15px;
- background:#fff;
-}
-button{
- background:#0866c6;
- color:white;
- border:0;
- padding:12px 18px;
- border-radius:9px;
- cursor:pointer;
- margin:4px;
- font-weight:bold;
-}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--ink);transition:.25s}
+header{background:linear-gradient(120deg,#06499c,#1685e8);color:#fff;padding:26px 16px 30px}
+.header-inner{max-width:1150px;margin:auto}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:48px;height:48px;border-radius:15px;background:#fff;color:var(--blue);display:grid;place-items:center;font-size:25px;font-weight:900}
+.brand h1{font-size:27px;margin:0}
+.brand p{margin:5px 0 0;color:#dcecff;font-size:13px}
+.header-actions{display:flex;gap:8px;flex-wrap:wrap}
+.header-actions button{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35)}
+.hero-copy{margin-top:28px;max-width:650px}
+.hero-copy h2{font-size:clamp(25px,5vw,38px);margin:0 0 9px;color:#fff}
+.hero-copy p{margin:0;color:#e5f1ff;line-height:1.6}
+nav{background:var(--card);padding:12px 14px;box-shadow:0 3px 12px #dce8f5;position:sticky;top:0;z-index:5;display:flex;justify-content:center;gap:6px;flex-wrap:wrap}
+nav a{color:var(--blue);text-decoration:none;margin:3px 7px;font-weight:bold;font-size:14px}
+.container{max-width:1150px;margin:22px auto;padding:0 14px}
+.card{background:var(--card);padding:22px;border-radius:17px;margin-bottom:18px;box-shadow:var(--shadow);border:1px solid var(--line)}
+h2{color:var(--blue);margin:0 0 14px;font-size:22px}
+h3{margin:0 0 8px}
+p{line-height:1.55}
+.small{color:var(--muted);font-size:13px}
+input,textarea,select{width:100%;padding:13px;margin:7px 0;border:1px solid #cbdcf0;border-radius:10px;font-size:15px;background:#fff;color:var(--ink)}
+button{background:#0866c6;color:#fff;border:0;padding:11px 16px;border-radius:10px;cursor:pointer;margin:4px 3px;font-weight:bold}
 button:hover{background:#064b96}
-.task{
- padding:12px;
- background:#edf5ff;
- margin:8px 0;
- border-radius:9px;
- display:flex;
- justify-content:space-between;
- align-items:center;
- gap:8px;
- overflow-wrap:anywhere;
-}
-#timer{
- font-size:45px;
- font-weight:bold;
- text-align:center;
- margin:15px;
- color:#0756b5;
-}
-#progressBar{
- height:18px;
- background:#dce9f8;
- border-radius:20px;
- overflow:hidden;
-}
-#progressFill{
- height:100%;
- width:0;
- background:#0875dc;
- transition:.3s;
-}
-.flashcard{
- background:#eaf3ff;
- padding:35px 15px;
- text-align:center;
- border-radius:12px;
- font-size:20px;
- min-height:100px;
- margin:15px 0;
- color:#0756b5;
-}
-.option{
- display:block;
- width:100%;
- text-align:left;
- background:#eaf3ff;
- color:#172b4d;
- margin:8px 0;
-}
-footer{
- text-align:center;
- padding:25px;
- color:#66809e;
-}
-body.dark{
- background:#101c2d;
- color:#eee;
-}
-body.dark nav,body.dark .card{
- background:#1d2d43;
- color:#eee;
-}
+button.secondary{background:#eaf3ff;color:#0756b5}
+button.danger{background:#fff0f0;color:#b42318}
+button:disabled{opacity:.55;cursor:not-allowed}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.stat{padding:16px;border-radius:13px;background:var(--soft);text-align:center}
+.stat strong{display:block;font-size:25px;color:var(--blue)}
+.stat span{font-size:12px;color:var(--muted)}
+.task{padding:12px;background:var(--soft);margin:8px 0;border-radius:10px;display:flex;justify-content:space-between;align-items:center;gap:8px;overflow-wrap:anywhere}
+.task span{flex:1;min-width:0}
+.task-actions{display:flex;gap:3px;flex-wrap:wrap}
+#timer{font-size:clamp(38px,8vw,54px);font-weight:bold;text-align:center;margin:15px;color:var(--blue);font-variant-numeric:tabular-nums}
+#progressBar{height:16px;background:#dce9f8;border-radius:20px;overflow:hidden}
+#progressFill{height:100%;width:0;background:linear-gradient(90deg,#0875dc,#45a5ff);transition:.3s}
+.flashcard{background:var(--soft);padding:32px 15px;text-align:center;border-radius:13px;font-size:20px;min-height:105px;margin:15px 0;color:var(--blue);display:grid;place-items:center}
+.option{display:block;width:100%;text-align:left;background:var(--soft);color:var(--ink);margin:8px 0}
+.option:hover{background:#dcecff}
+.pill{display:inline-block;background:#eaf3ff;color:#0756b5;padding:6px 10px;border-radius:30px;font-size:12px;font-weight:bold;margin:3px}
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.subject-tile{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--card);text-align:left}
+.subject-tile strong{display:block;color:var(--blue);margin-bottom:5px}
+.notice{background:#fff8e7;border:1px solid #f5df9c;color:#75530a;padding:12px;border-radius:10px;font-size:13px}
+.hidden{display:none!important}
+footer{text-align:center;padding:25px;color:var(--muted)}
+body.dark{--bg:#101c2d;--ink:#edf4ff;--muted:#a8bad0;--card:#1d2d43;--line:#314761;--soft:#293e59;--shadow:0 8px 26px rgba(0,0,0,.16)}
+body.dark nav{background:#1d2d43}
 body.dark nav a{color:#8fc4ff}
-body.dark input,body.dark textarea,body.dark select{
- background:#263b55;
- color:white;
- border-color:#49617e;
-}
-body.dark .task,body.dark .flashcard,
-body.dark .option{
- background:#293e59;
- color:white;
-}
-.small{color:#71839b;font-size:13px}
+body.dark input,body.dark textarea,body.dark select{background:#263b55;color:#fff;border-color:#49617e}
+body.dark .task,body.dark .flashcard,body.dark .option,body.dark .stat,body.dark .subject-tile{background:#293e59;color:#fff}
+body.dark .subject-tile strong{color:#8fc4ff}
+body.dark button.secondary{background:#293e59;color:#c8e2ff}
+body.dark button.danger{background:#4b2a32;color:#ffd4d4}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.card{padding:17px}.brand h1{font-size:23px}.task{align-items:flex-start;flex-wrap:wrap}.task-actions{width:100%}}
 </style>
-
 </head>
 <body>
 <header>
-  <div class="container">
-<section class="card" id="auth">
-<h2>🔐 StudyBuddy Account</h2>
-<input type="text" id="studentName" placeholder="Your Name">
-<input type="email" id="email" placeholder="Email Address">
-<input type="password" id="password" placeholder="Password">
-<button onclick="signup()">Create Account</button>
-<button onclick="login()">Login</button>
-<button onclick="forgotPassword()">Forgot Password?</button>
-<button onclick="logout()">Logout</button>
-<p id="authMessage">Welcome to StudyBuddy!</p>
-</section>
+ <div class="header-inner">
+  <div class="topline">
+   <div class="brand"><div class="logo">L</div><div><h1>Learnify India</h1><p>Learn Better • Stay Focused • Achieve More</p></div></div>
+   <div class="header-actions"><button onclick="toggleDark()">🌙 Dark Mode</button><button onclick="logout()">Logout</button></div>
   </div>
-<h1>📚 StudyBuddy</h1>
-<p>Your Smart Study Partner</p>
-<p>Learn Better • Stay Focused • Achieve More</p>
-<button onclick="toggleDark()">🌙 Dark Mode</button>
+  <div class="hero-copy"><h2>Your smart study partner.</h2><p>One place for school notes, daily targets, practice quizzes and study progress — for RBSE and CBSE students.</p></div>
+ </div>
 </header>
-
 <nav>
-<a href="#notes">Notes</a>
-<a href="#tasks">Tasks</a>
-<a href="#timetable">Timetable</a>
-<a href="#quiz">Quiz</a>
-<a href="#flashcards">Flashcards</a>
-<a href="#timerbox">Timer</a>
-<a href="#progress">Progress</a>
+ <a href="#dashboard">Home</a><a href="#academics">Classes</a><a href="#notes">Notes</a><a href="#tasks">Tasks</a><a href="#timetable">Timetable</a><a href="#quiz">Quiz</a><a href="#flashcards">Flashcards</a><a href="#timerbox">Timer</a><a href="#progress">Progress</a>
 </nav>
-
-<div class="container">
-
-<section class="card">
-<h2>👋 Welcome to StudyBuddy!</h2>
-<p>Your personal study space. Plan your day, practise questions and track your progress.</p>
-</section>
-
-<section class="card" id="notes">
-<h2>📝 My Notes</h2>
-<input id="noteTitle" placeholder="Note title">
-<textarea id="noteText" rows="3" placeholder="Write your notes..."></textarea>
-<button onclick="saveNote()">Save Note</button>
-<div id="notesList"></div>
-</section>
-
-<section class="card" id="tasks">
-<h2>✅ To-Do List</h2>
-<input id="taskInput" placeholder="Enter your study task">
-<button onclick="addTask()">Add Task</button>
-<div id="taskList"></div>
-</section>
-
-<section class="card" id="timetable">
-<h2>📅 Study Timetable</h2>
-<input id="subject" placeholder="Subject name">
-<input id="studyTime" type="time">
-<button onclick="addSchedule()">Add to Timetable</button>
-<div id="scheduleList"></div>
-</section>
-
-<section class="card" id="quiz">
-<h2>🧠 Quick Quiz</h2>
-<p id="question">Loading question...</p>
-<div id="options"></div>
-<p id="quizResult"></p>
-<p id="score"></p>
-<button onclick="nextQuestion()">Next Question ➜</button>
-</section>
-
-<section class="card" id="flashcards">
-<h2>📖 Flashcards</h2>
-<input id="flashQ" placeholder="Enter question">
-<input id="flashA" placeholder="Enter answer">
-<button onclick="addFlashcard()">Add Flashcard</button>
-<div class="flashcard" id="flashDisplay">Your flashcards will appear here.</div>
-<button onclick="showAnswer()">Show Answer</button>
-<button onclick="nextFlashcard()">Next Card ➜</button>
-</section>
-
-<section class="card" id="timerbox">
-<h2>⏰ Focus Study Timer</h2>
-<div id="timer">25:00</div>
-<div style="text-align:center">
-<button onclick="startTimer()">Start</button>
-<button onclick="pauseTimer()">Pause</button>
-<button onclick="resetTimer()">Reset</button>
-</div>
-<p class="small" style="text-align:center">Focus for 25 minutes, then take a short break!</p>
-</section>
-
-<section class="card" id="progress">
-<h2>📊 My Study Progress</h2>
-<p id="progressText">0 of 0 tasks completed</p>
-<div id="progressBar"><div id="progressFill"></div></div>
-<p id="progressPercent">0% completed</p>
-</section>
-
-</div>
-
-<footer>
-<p>Made with ❤️ for Students</p>
-<p>StudyBuddy © 2026</p>
-</footer>
-
+<main class="container">
+ <section class="card" id="auth">
+  <h2>🔐 Student Account</h2>
+  <p class="small">Create an account or log in to Learnify India.</p>
+  <div class="grid">
+   <div><input type="text" id="studentName" placeholder="Your name" autocomplete="name"><input type="email" id="email" placeholder="Email address" autocomplete="email"><input type="password" id="password" placeholder="Password (minimum 6 characters)" autocomplete="current-password"></div>
+   <div><p class="small">Use the same email and password whenever you return.</p><button onclick="signup()">Create Account</button><button onclick="login()">Login</button><button class="secondary" onclick="forgotPassword()">Forgot Password?</button><p id="authMessage" role="status">You can use the study tools without logging in on this device.</p></div>
+  </div>
+ </section>
+ <section class="card" id="dashboard">
+  <h2>👋 Welcome to Learnify India!</h2>
+  <p id="welcomeText">Choose your board and class to get started.</p>
+  <div class="stats"><div class="stat"><strong id="dashTasks">0</strong><span>Total tasks</span></div><div class="stat"><strong id="dashDone">0</strong><span>Completed</span></div><div class="stat"><strong id="dashNotes">0</strong><span>Saved notes</span></div></div>
+ </section>
+ <section class="card" id="academics">
+  <h2>🎓 Choose Your Board & Class</h2>
+  <div class="grid">
+   <div><label for="boardSelect"><b>Board</b></label><select id="boardSelect" onchange="updateAcademicSelection()"><option value="RBSE">RBSE – Rajasthan Board</option><option value="CBSE">CBSE – Central Board</option></select></div>
+   <div><label for="classSelect"><b>Class</b></label><select id="classSelect" onchange="updateAcademicSelection()"><option value="5">Class 5</option><option value="6">Class 6</option><option value="7">Class 7</option><option value="8">Class 8</option><option value="9">Class 9</option><option value="10">Class 10</option><option value="11">Class 11</option><option value="12">Class 12</option></select></div>
+  </div>
+  <div id="streamWrap" class="hidden"><label for="streamSelect"><b>Stream (Class 11–12)</b></label><select id="streamSelect" onchange="updateAcademicSelection()"><option value="Science">Science</option><option value="Commerce">Commerce</option><option value="Arts">Arts</option></select></div>
+  <div style="margin-top:12px"><span class="pill" id="selectedBoard">RBSE</span><span class="pill" id="selectedClass">Class 5</span><span class="pill hidden" id="selectedStream">Science</span></div>
+  <h3 style="margin-top:18px">Your subjects</h3>
+  <div class="subject-grid" id="subjectGrid"></div>
+  <p class="notice" style="margin-top:15px">Board and class sections are ready. Chapter-wise notes, PDFs and syllabus links can be added subject by subject. The exact subject list can vary by class and board.</p>
+ </section>
+ <section class="card" id="notes">
+  <h2>📝 My Notes</h2><input id="noteTitle" placeholder="Note title"><textarea id="noteText" rows="3" placeholder="Write your notes..."></textarea><button onclick="saveNote()">Save Note</button><div id="notesList"></div>
+ </section>
+ <section class="card" id="tasks">
+  <h2>✅ To-Do List</h2><input id="taskInput" placeholder="Enter your study task"><button onclick="addTask()">Add Task</button><div id="taskList"></div>
+ </section>
+ <section class="card" id="timetable">
+  <h2>📅 Study Timetable</h2><div class="grid"><input id="subject" placeholder="Subject name"><input id="studyTime" type="time"></div><button onclick="addSchedule()">Add to Timetable</button><div id="scheduleList"></div>
+ </section>
+ <section class="card" id="quiz">
+  <h2>🧠 Quick Quiz</h2><p id="question">Loading question...</p><div id="options"></div><p id="quizResult" role="status"></p><p id="score"></p><button onclick="nextQuestion()">Next Question ➜</button>
+ </section>
+ <section class="card" id="flashcards">
+  <h2>📖 Flashcards</h2><input id="flashQ" placeholder="Enter question"><input id="flashA" placeholder="Enter answer"><button onclick="addFlashcard()">Add Flashcard</button><div class="flashcard" id="flashDisplay">Your flashcards will appear here.</div><button onclick="showAnswer()">Show Answer</button><button class="secondary" onclick="nextFlashcard()">Next Card ➜</button>
+ </section>
+ <section class="card" id="timerbox">
+  <h2>⏰ Focus Study Timer</h2><div id="timer">25:00</div><div style="text-align:center"><button onclick="startTimer()">Start</button><button class="secondary" onclick="pauseTimer()">Pause</button><button class="secondary" onclick="resetTimer()">Reset</button></div><p class="small" style="text-align:center">Focus for 25 minutes, then take a short break.</p>
+ </section>
+ <section class="card" id="progress">
+  <h2>📊 My Study Progress</h2><p id="progressText">0 of 0 tasks completed</p><div id="progressBar"><div id="progressFill"></div></div><p id="progressPercent">0% completed</p>
+ </section>
+</main>
+<footer><p>Made with ❤️ for Students</p><p>Learnify India © 2026</p></footer>
 <script>
-function getData(key){return JSON.parse(localStorage.getItem(key)||"[]")}
+const $=id=>document.getElementById(id);
+function getData(key){try{return JSON.parse(localStorage.getItem(key)||"[]")}catch(e){return []}}
 function saveData(key,data){localStorage.setItem(key,JSON.stringify(data))}
 function safe(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function toggleDark(){document.body.classList.toggle("dark");localStorage.setItem("lifedark",document.body.classList.contains("dark"))}
+if(localStorage.getItem("lifedark")==="true")document.body.classList.add("dark");
 
-function toggleDark(){
-document.body.classList.toggle("dark");
-localStorage.setItem("sbdark",document.body.classList.contains("dark"));
+const subjectSets={
+ "5":["English","Hindi","Mathematics","EVS"],
+ "6":["English","Hindi","Mathematics","Science","Social Science"],
+ "7":["English","Hindi","Mathematics","Science","Social Science"],
+ "8":["English","Hindi","Mathematics","Science","Social Science"],
+ "9":["English","Hindi","Mathematics","Science","Social Science"],
+ "10":["English","Hindi","Mathematics","Science","Social Science"],
+ "11":{"Science":["Physics","Chemistry","Mathematics","Biology","English"],"Commerce":["Accountancy","Business Studies","Economics","English"],"Arts":["History","Political Science","Geography","Economics","English"]},
+ "12":{"Science":["Physics","Chemistry","Mathematics","Biology","English"],"Commerce":["Accountancy","Business Studies","Economics","English"],"Arts":["History","Political Science","Geography","Economics","English"]}
+};
+function updateAcademicSelection(){
+ const board=$("boardSelect").value,cls=$("classSelect").value,isSenior=Number(cls)>=11;
+ $("streamWrap").classList.toggle("hidden",!isSenior);
+ $("selectedBoard").textContent=board;$("selectedClass").textContent="Class "+cls;
+ $("selectedStream").classList.toggle("hidden",!isSenior);
+ let stream=$("streamSelect").value;$("selectedStream").textContent=stream;
+ const subjects=Array.isArray(subjectSets[cls])?subjectSets[cls]:subjectSets[cls][stream];
+ $("subjectGrid").innerHTML=subjects.map(s=>`<div class="subject-tile"><strong>${safe(s)}</strong><span class="small">${board} • Class ${cls}</span></div>`).join("");
+ $("welcomeText").textContent=`You are viewing ${board} ${"Class "+cls}${isSenior?" • "+stream+" stream":""}. Select a subject below to plan your study.`;
+ localStorage.setItem("learnifyBoard",board);localStorage.setItem("learnifyClass",cls);localStorage.setItem("learnifyStream",stream);
 }
-if(localStorage.getItem("sbdark")==="true")document.body.classList.add("dark");
+$("boardSelect").value=localStorage.getItem("learnifyBoard")||"RBSE";
+$("classSelect").value=localStorage.getItem("learnifyClass")||"5";
+$("streamSelect").value=localStorage.getItem("learnifyStream")||"Science";
+updateAcademicSelection();
 
-function saveNote(){
-let title=noteTitle.value.trim(),text=noteText.value.trim();
-if(!title||!text)return alert("Enter title and notes");
-let a=getData("sbnotes");a.push({title,text});saveData("sbnotes",a);
-noteTitle.value="";noteText.value="";showNotes();
-}
-function showNotes(){
-notesList.innerHTML=getData("sbnotes").map((n,i)=>
-`<div class="task"><span><b>${safe(n.title)}</b><br>${safe(n.text)}</span><button onclick="deleteNote(${i})">Delete</button></div>`).join("");
-}
-function deleteNote(i){let a=getData("sbnotes");a.splice(i,1);saveData("sbnotes",a);showNotes();}
-
-function addTask(){
-let v=taskInput.value.trim();if(!v)return;
-let a=getData("sbtasks");a.push({text:v,done:false});saveData("sbtasks",a);
-taskInput.value="";showTasks();
-}
-function showTasks(){
-let a=getData("sbtasks");
-taskList.innerHTML=a.map((t,i)=>
-`<div class="task"><span>${t.done?"✅ ":""}${safe(t.text)}</span><button onclick="completeTask(${i})">${t.done?"Undo":"Done"}</button><button onclick="deleteTask(${i})">Delete</button></div>`).join("");
-updateProgress();
-}
-function completeTask(i){let a=getData("sbtasks");a[i].done=!a[i].done;saveData("sbtasks",a);showTasks();}
-function deleteTask(i){let a=getData("sbtasks");a.splice(i,1);saveData("sbtasks",a);showTasks();}
-function updateProgress(){
-let a=getData("sbtasks"),done=a.filter(t=>t.done).length;
-let p=a.length?Math.round(done/a.length*100):0;
-progressText.textContent=done+" of "+a.length+" tasks completed";
-progressFill.style.width=p+"%";progressPercent.textContent=p+"% completed";
-}
-
-function addSchedule(){
-let s=subject.value.trim(),t=studyTime.value;
-if(!s||!t)return alert("Enter subject and time");
-let a=getData("sbschedule");a.push({s,t});a.sort((x,y)=>x.t.localeCompare(y.t));saveData("sbschedule",a);
-subject.value="";studyTime.value="";showSchedule();
-}
-function showSchedule(){
-scheduleList.innerHTML=getData("sbschedule").map((x,i)=>
-`<div class="task"><span>⏰ ${safe(x.t)} — ${safe(x.s)}</span><button onclick="deleteSchedule(${i})">Delete</button></div>`).join("");
-}
-function deleteSchedule(i){let a=getData("sbschedule");a.splice(i,1);saveData("sbschedule",a);showSchedule();}
+function saveNote(){let title=$("noteTitle").value.trim(),text=$("noteText").value.trim();if(!title||!text)return alert("Enter title and notes");let a=getData("sbnotes");a.push({title,text});saveData("sbnotes",a);$("noteTitle").value="";$("noteText").value="";showNotes()}
+function showNotes(){$("notesList").innerHTML=getData("sbnotes").map((n,i)=>`<div class="task"><span><b>${safe(n.title)}</b><br>${safe(n.text)}</span><div class="task-actions"><button class="danger" onclick="deleteNote(${i})">Delete</button></div></div>`).join("")||'<p class="small">No notes saved yet.</p>';updateDashboard()}
+function deleteNote(i){let a=getData("sbnotes");a.splice(i,1);saveData("sbnotes",a);showNotes()}
+function addTask(){let v=$("taskInput").value.trim();if(!v)return;let a=getData("sbtasks");a.push({text:v,done:false});saveData("sbtasks",a);$("taskInput").value="";showTasks()}
+function showTasks(){let a=getData("sbtasks");$("taskList").innerHTML=a.map((t,i)=>`<div class="task"><span>${t.done?"✅ ":""}${safe(t.text)}</span><div class="task-actions"><button onclick="completeTask(${i})">${t.done?"Undo":"Done"}</button><button class="danger" onclick="deleteTask(${i})">Delete</button></div></div>`).join("")||'<p class="small">No tasks added yet.</p>';updateProgress()}
+function completeTask(i){let a=getData("sbtasks");a[i].done=!a[i].done;saveData("sbtasks",a);showTasks()}
+function deleteTask(i){let a=getData("sbtasks");a.splice(i,1);saveData("sbtasks",a);showTasks()}
+function updateProgress(){let a=getData("sbtasks"),done=a.filter(t=>t.done).length,p=a.length?Math.round(done/a.length*100):0;$("progressText").textContent=done+" of "+a.length+" tasks completed";$("progressFill").style.width=p+"%";$("progressPercent").textContent=p+"% completed";$("dashTasks").textContent=a.length;$("dashDone").textContent=done}
+function updateDashboard(){$("dashNotes").textContent=getData("sbnotes").length}
+function addSchedule(){let s=$("subject").value.trim(),t=$("studyTime").value;if(!s||!t)return alert("Enter subject and time");let a=getData("sbschedule");a.push({s,t});a.sort((x,y)=>x.t.localeCompare(y.t));saveData("sbschedule",a);$("subject").value="";$("studyTime").value="";showSchedule()}
+function showSchedule(){$("scheduleList").innerHTML=getData("sbschedule").map((x,i)=>`<div class="task"><span>⏰ ${safe(x.t)} — ${safe(x.s)}</span><div class="task-actions"><button class="danger" onclick="deleteSchedule(${i})">Delete</button></div></div>`).join("")||'<p class="small">No timetable entries yet.</p>'}
+function deleteSchedule(i){let a=getData("sbschedule");a.splice(i,1);saveData("sbschedule",a);showSchedule()}
 
 const questions=[
 {q:"Which planet is known as the Red Planet?",o:["Earth","Mars","Jupiter","Venus"],a:1},
@@ -314,150 +187,41 @@ const questions=[
 {q:"What is 12 × 8?",o:["88","96","108","86"],a:1}
 ];
 let qi=0,quizScore=0,answered=false;
-function loadQuestion(){
-let q=questions[qi];answered=false;
-question.textContent=(qi+1)+". "+q.q;
-options.innerHTML=q.o.map((x,i)=>`<button class="option" onclick="checkAnswer(${i})">${safe(x)}</button>`).join("");
-quizResult.textContent="";
-score.textContent="Score: "+quizScore;
-}
-function checkAnswer(i){
-if(answered)return;answered=true;
-let correct=questions[qi].a;
-if(i===correct){quizScore++;quizResult.textContent="✅ Correct answer!";}
-else quizResult.textContent="❌ Incorrect. Correct answer: "+questions[qi].o[correct];
-score.textContent="Score: "+quizScore;
-}
-function nextQuestion(){qi=(qi+1)%questions.length;if(qi===0)quizScore=0;loadQuestion();}
-
-let flashIndex=0,flashShown=false;
-function addFlashcard(){
-let q=flashQ.value.trim(),a=flashA.value.trim();if(!q||!a)return alert("Enter question and answer");
-let cards=getData("sbflash");cards.push({q,a});saveData("sbflash",cards);
-flashQ.value="";flashA.value="";flashIndex=cards.length-1;displayFlash();
-}
-function displayFlash(){
-let a=getData("sbflash");
-if(!a.length){flashDisplay.textContent="No flashcards yet. Add one above!";return;}
-if(flashIndex>=a.length)flashIndex=0;
-flashShown=false;flashDisplay.textContent=a[flashIndex].q;
-}
-function showAnswer(){
-let a=getData("sbflash");if(!a.length)return;
-flashShown=true;flashDisplay.textContent=a[flashIndex].a;
-}
-function nextFlashcard(){let a=getData("sbflash");if(!a.length)return;flashIndex=(flashIndex+1)%a.length;displayFlash();}
-
+function loadQuestion(){let q=questions[qi];answered=false;$("question").textContent=(qi+1)+". "+q.q;$("options").innerHTML=q.o.map((x,i)=>`<button class="option" onclick="checkAnswer(${i})">${safe(x)}</button>`).join("");$("quizResult").textContent="";$("score").textContent="Score: "+quizScore}
+function checkAnswer(i){if(answered)return;answered=true;let correct=questions[qi].a;if(i===correct){quizScore++;$("quizResult").textContent="✅ Correct answer!"}else $("quizResult").textContent="❌ Incorrect. Correct answer: "+questions[qi].o[correct];$("score").textContent="Score: "+quizScore}
+function nextQuestion(){qi=(qi+1)%questions.length;if(qi===0)quizScore=0;loadQuestion()}
+let flashIndex=0;
+function addFlashcard(){let q=$("flashQ").value.trim(),a=$("flashA").value.trim();if(!q||!a)return alert("Enter question and answer");let cards=getData("sbflash");cards.push({q,a});saveData("sbflash",cards);$("flashQ").value="";$("flashA").value="";flashIndex=cards.length-1;displayFlash()}
+function displayFlash(){let a=getData("sbflash");if(!a.length){$("flashDisplay").textContent="No flashcards yet. Add one above!";return}if(flashIndex>=a.length)flashIndex=0;$("flashDisplay").textContent=a[flashIndex].q}
+function showAnswer(){let a=getData("sbflash");if(a.length)$("flashDisplay").textContent=a[flashIndex].a}
+function nextFlashcard(){let a=getData("sbflash");if(!a.length)return;flashIndex=(flashIndex+1)%a.length;displayFlash()}
 let seconds=1500,interval=null;
-function updateTimer(){
-timer.textContent=String(Math.floor(seconds/60)).padStart(2,"0")+":"+String(seconds%60).padStart(2,"0");
-}
-function startTimer(){
-if(interval)return;
-interval=setInterval(()=>{
-if(seconds>0){seconds--;updateTimer();}
-else{pauseTimer();alert("Great! Study session completed 🎉");}
-},1000);
-}
-function pauseTimer(){clearInterval(interval);interval=null;}
-function resetTimer(){pauseTimer();seconds=1500;updateTimer();}
-
-showNotes();showTasks();showSchedule();loadQuestion();displayFlash();updateTimer();
+function updateTimer(){$("timer").textContent=String(Math.floor(seconds/60)).padStart(2,"0")+":"+String(seconds%60).padStart(2,"0")}
+function startTimer(){if(interval)return;interval=setInterval(()=>{if(seconds>0){seconds--;updateTimer()}else{pauseTimer();alert("Great! Study session completed 🎉")}},1000)}
+function pauseTimer(){clearInterval(interval);interval=null}
+function resetTimer(){pauseTimer();seconds=1500;updateTimer()}
+showNotes();showTasks();showSchedule();loadQuestion();displayFlash();updateTimer();updateDashboard();
 </script>
- 
+
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-app.js";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  sendPasswordResetEmail,
-  signOut,
-  onAuthStateChanged
-} from "https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, signOut, onAuthStateChanged, updateProfile } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAlRnJF1uKWP2XTSVnS1y5_9jg6hx5J0ns",
-  authDomain: "studybuddy-75864.firebaseapp.com",
-  projectId: "studybuddy-75864",
-  storageBucket: "studybuddy-75864.firebasestorage.app",
-  messagingSenderId: "1011565103905",
-  appId: "1:1011565103905:web:492517c69352e67b2e8c60",
-  measurementId: "G-V1Z0HN1TVD"
+ apiKey:"AIzaSyAlRnJF1uKWP2XTSVnS1y5_9jg6hx5J0ns",
+ authDomain:"studybuddy-75864.firebaseapp.com",
+ projectId:"studybuddy-75864",
+ storageBucket:"studybuddy-75864.firebasestorage.app",
+ messagingSenderId:"1011565103905",
+ appId:"1:1011565103905:web:492517c69352e67b2e8c60",
+ measurementId:"G-V1Z0HN1TVD"
 };
-
-const app = initializeApp(firebaseConfig);
-  const authMessage = document.getElementById("authMessage");
-const auth = getAuth(app);
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  sendPasswordResetEmail,
-  signOut,
-  onAuthStateChanged
-} from "https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js";
-window.signup = async function() {
-  const name = document.getElementById("studentName").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value;
-
-  if (!name || !email || !password) {
-    authMessage.textContent = "Please fill all fields.";
-    return;
-  }
-
-  try {
-    const result = await createUserWithEmailAndPassword(auth, email, password);
-   await updateProfile(result.user, { displayName: name }); 
-    authMessage.textContent = "Account created successfully! Welcome " + name;
-  } catch (error) {
-    authMessage.textContent = error.message;
-  }
-};
-
-window.login = async function() {
-  try {
-    await signInWithEmailAndPassword(
-      auth,
-      document.getElementById("email").value.trim(),
-      document.getElementById("password").value
-    );
-    authMessage.textContent = "Login successful!";
-  } catch (error) {
-    authMessage.textContent = error.message;
-  }
-};
-
-window.forgotPassword = async function() {
-  const email = document.getElementById("email").value.trim();
-  if (!email) {
-    authMessage.textContent = "Enter your email first.";
-    return;
-  }
-  try {
-    await sendPasswordResetEmail(auth, email);
-    authMessage.textContent = "Password reset email sent!";
-  } catch (error) {
-    authMessage.textContent = error.message;
-  }
-};
-
-window.logout = async function() {
-  try {
-    await signOut(auth);
-    authMessage.textContent = "You are logged out.";
-  } catch (error) {
-    authMessage.textContent = error.message;
-  }
-};
-
-onAuthStateChanged(auth, user => {
-  if (user) {
-    authMessage.textContent = "Logged in as " + (user.email || "");
-  }
-});
-</script>
- 
-</body>
-</html>
+const app=initializeApp(firebaseConfig);
+const auth=getAuth(app);
+const authMessage=document.getElementById("authMessage");
+window.signup=async function(){
+ const name=document.getElementById("studentName").value.trim();
+ const email=document.getElementById("email").value.trim();
+ const password=document.getElementById("password").value;
+ if(!name||!email||!password){authMessage.textContent="Please fill all fields.";return}
+ if(password.length<6){authMessage.textContent="Password must be at 
