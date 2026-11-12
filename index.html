@@ -1,190 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="IjuhPZw_FG7tFD_gMiqeDIS9il__pJ4O4tK3-e7kDK8">
-<meta name="theme-color" content="#0b63ce">
-<meta name="description" content="Learnify India - Smart learning for RBSE and CBSE students from Class 5 to 12.">
-<title>Learnify India | Smart Study Partner</title>
-<style>
-:root{--blue:#0756b5;--blue2:#1685e8;--ink:#172b4d;--muted:#71839b;--bg:#f3f7fd;--card:#fff;--line:#e2ebf6;--soft:#edf5ff;--shadow:0 8px 26px rgba(20,80,150,.08)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--ink);transition:.25s}
-header{background:linear-gradient(120deg,#06499c,#1685e8);color:#fff;padding:26px 16px 30px}
-.header-inner{max-width:1150px;margin:auto}.topline{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:12px}.logo{width:48px;height:48px;border-radius:15px;background:#fff;color:var(--blue);display:grid;place-items:center;font-size:25px;font-weight:900}
-.brand h1{font-size:27px;margin:0}.brand p{margin:5px 0 0;color:#dcecff;font-size:13px}
-.header-actions{display:flex;gap:8px;flex-wrap:wrap}.header-actions button{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35)}
-.hero-copy{margin-top:28px;max-width:650px}.hero-copy h2{font-size:clamp(25px,5vw,38px);margin:0 0 9px;color:#fff}.hero-copy p{margin:0;color:#e5f1ff;line-height:1.6}
-nav{background:var(--card);padding:12px 14px;box-shadow:0 3px 12px #dce8f5;position:sticky;top:0;z-index:5;display:flex;justify-content:center;gap:6px;flex-wrap:wrap}
-nav a{color:var(--blue);text-decoration:none;margin:3px 7px;font-weight:bold;font-size:14px}
-.container{max-width:1150px;margin:22px auto;padding:0 14px}.card{background:var(--card);padding:22px;border-radius:17px;margin-bottom:18px;box-shadow:var(--shadow);border:1px solid var(--line)}
-h2{color:var(--blue);margin:0 0 14px;font-size:22px}h3{margin:0 0 8px}p{line-height:1.55}.small{color:var(--muted);font-size:13px}
-input,textarea,select{width:100%;padding:13px;margin:7px 0;border:1px solid #cbdcf0;border-radius:10px;font-size:15px;background:#fff;color:var(--ink)}
-button{background:#0866c6;color:#fff;border:0;padding:11px 16px;border-radius:10px;cursor:pointer;margin:4px 3px;font-weight:bold}
-button:hover{background:#064b96}button.secondary{background:#eaf3ff;color:#0756b5}button.danger{background:#fff0f0;color:#b42318}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
-.stat{padding:16px;border-radius:13px;background:var(--soft);text-align:center}.stat strong{display:block;font-size:25px;color:var(--blue)}.stat span{font-size:12px;color:var(--muted)}
-.task{padding:12px;background:var(--soft);margin:8px 0;border-radius:10px;display:flex;justify-content:space-between;align-items:center;gap:8px;overflow-wrap:anywhere}
-.task span{flex:1;min-width:0}.task-actions{display:flex;gap:3px;flex-wrap:wrap}
-.flashcard{background:var(--soft);padding:32px 15px;text-align:center;border-radius:13px;font-size:20px;min-height:105px;margin:15px 0;color:var(--blue);display:grid;place-items:center}
-.option{display:block;width:100%;text-align:left;background:var(--soft);color:var(--ink);margin:8px 0}.option:hover{background:#dcecff}
-.pill{display:inline-block;background:#eaf3ff;color:#0756b5;padding:6px 10px;border-radius:30px;font-size:12px;font-weight:bold;margin:3px}
-.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
-.subject-tile{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--card);text-align:left}
-.subject-tile strong{display:block;color:var(--blue);margin-bottom:5px}.notice{background:#fff8e7;border:1px solid #f5df9c;color:#75530a;padding:12px;border-radius:10px;font-size:13px}
-.hidden{display:none!important}.chapter-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
-.chapter-btn{width:100%;text-align:left;background:var(--soft);color:var(--ink);border:1px solid var(--line);padding:14px}
-.chapter-btn:hover{background:#dcecff}.study-content{line-height:1.7}.study-content h3{color:var(--blue);margin-top:20px}
-.study-content li{margin:6px 0}.study-content .equation{background:var(--soft);padding:10px 14px;border-radius:9px;font-weight:bold;overflow-x:auto}
-footer{text-align:center;padding:25px;color:var(--muted)}
-body.dark{--bg:#101c2d;--ink:#edf4ff;--muted:#a8bad0;--card:#1d2d43;--line:#314761;--soft:#293e59;--shadow:0 8px 26px rgba(0,0,0,.16)}
-body.dark nav{background:#1d2d43}body.dark nav a{color:#8fc4ff}
-body.dark input,body.dark textarea,body.dark select{background:#263b55;color:#fff;border-color:#49617e}
-body.dark .task,body.dark .flashcard,body.dark .option,body.dark .stat,body.dark .subject-tile,body.dark .chapter-btn{background:#293e59;color:#fff}
-body.dark .subject-tile strong{color:#8fc4ff}body.dark button.secondary{background:#293e59;color:#c8e2ff}
-@media(max-width:700px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.card{padding:17px}.brand h1{font-size:23px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="IjuhPZw_FG7tFD_gMiqeDIS9il__pJ4O4tK3-e7kDK8">
+  <meta name="theme-color" content="#155eef">
+  <meta name="description" content="Learnify India - Free study notes, quizzes and learning resources for RBSE and CBSE students from Classes 5 to 12.">
+  <title>Learnify India | Learn Smarter</title>
+  <style>
+    :root{--blue:#155eef;--blue2:#0b48c7;--ink:#17233b;--muted:#667085;--bg:#f5f8ff;--card:#fff;--line:#e6ebf3;--soft:#edf3ff;--green:#15945a;--shadow:0 12px 35px rgba(20,48,100,.08)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}
+    button,input,select,textarea{font:inherit}button{cursor:pointer}.app{min-height:100vh}.topbar{height:72px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 5%;position:sticky;top:0;z-index:20}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:20px;color:var(--ink);text-decoration:none}.brand-mark{width:39px;height:39px;border-radius:13px;background:linear-gradient(135deg,#155eef,#6ea8ff);display:grid;place-items:center;color:#fff;font-weight:900;box-shadow:0 6px 15px #155eef35}
+    .top-actions{display:flex;align-items:center;gap:10px}.pill-btn,.primary-btn,.ghost-btn{border:0;border-radius:12px;padding:10px 16px;font-weight:700}.primary-btn{background:var(--blue);color:#fff}.primary-btn:hover{background:var(--blue2)}.ghost-btn{background:var(--soft);color:var(--blue)}.icon-btn{width:42px;height:42px;border:1px solid var(--line);background:#fff;border-radius:12px;color:var(--ink);font-size:20px}
+    .layout{display:grid;grid-template-columns:245px minmax(0,1fr);max-width:1440px;margin:auto}.sidebar{padding:26px 16px;border-right:1px solid var(--line);min-height:calc(100vh - 72px);background:#fff;position:sticky;top:72px;height:calc(100vh - 72px);overflow:auto}
+    .side-label{font-size:11px;font-weight:800;color:#98a2b3;letter-spacing:1.2px;padding:10px 13px}.nav-link{width:100%;display:flex;align-items:center;gap:12px;padding:12px 13px;border:0;background:transparent;color:#536078;border-radius:12px;text-align:left;font-weight:650;margin:3px 0}.nav-link:hover,.nav-link.active{background:var(--soft);color:var(--blue)}.nav-ico{width:23px;text-align:center;font-size:17px}
+    main{padding:32px clamp(18px,4vw,54px) 70px;min-width:0}.hero{background:linear-gradient(115deg,#104bc5,#3479f6 65%,#76a8ff);color:white;padding:36px;border-radius:24px;display:flex;align-items:center;justify-content:space-between;gap:24px;box-shadow:0 18px 40px #155eef25;overflow:hidden}.hero h1{font-size:clamp(27px,4vw,42px);line-height:1.15;margin:0 0 12px;max-width:650px}.hero p{margin:0 0 22px;color:#eaf1ff;max-width:590px}.hero .primary-btn{background:#fff;color:var(--blue)}.hero-art{font-size:95px;opacity:.95;padding:0 18px}
+    .section{margin-top:34px;scroll-margin-top:95px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:17px}.section-head h2{font-size:22px;margin:0}.section-head p{margin:4px 0 0;color:var(--muted);font-size:14px}.muted{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow)}.feature-card{transition:.2s}.feature-card:hover{transform:translateY(-3px);border-color:#bfd2ff}.feature-icon{width:45px;height:45px;border-radius:14px;background:var(--soft);display:grid;place-items:center;font-size:22px;margin-bottom:13px}.card h3{font-size:17px;margin:0 0 6px}.card p{font-size:14px;color:var(--muted);margin:0 0 15px}
+    .selectors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}.field select,.field input,.field textarea,.auth-field input{width:100%;border:1px solid #d9e1ee;border-radius:11px;padding:11px 12px;background:#fff;color:var(--ink);outline:none}.field select:focus,.field input:focus,.field textarea:focus,.auth-field input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #155eef18}
+    .subject-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:17px}.subject{padding:16px;border:1px solid var(--line);background:#fff;border-radius:14px;text-align:left;font-weight:700;color:var(--ink)}.subject:hover{border-color:var(--blue);background:var(--soft);color:var(--blue)}
+    .material-box{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:16px}.material-box h3{margin:0 0 8px}.material-box h4{margin:18px 0 7px}.material-box li{margin:6px 0}.equation{background:#f1f5ff;border:1px solid #e0e9ff;padding:10px 13px;border-radius:10px;font-family:ui-monospace,monospace;overflow-wrap:anywhere;margin:8px 0}
+    .quiz-q{padding:16px 0;border-bottom:1px solid var(--line)}.quiz-q:last-child{border:0}.quiz-q p{font-weight:700;margin:0 0 10px}.option{display:block;margin:7px 0;color:#475467;font-size:14px}.option input{margin-right:8px;accent-color:var(--blue)}.result{font-weight:800;margin-top:14px;color:var(--green)}
+    .notes-area{min-height:125px;resize:vertical}.row-wrap{display:flex;gap:10px;flex-wrap:wrap}.schedule-row{display:grid;grid-template-columns:1fr 1.5fr auto;gap:9px;margin:9px 0}.schedule-row input{min-width:0;border:1px solid var(--line);padding:10px;border-radius:10px}.small-btn{border:0;background:#feecec;color:#c03939;border-radius:9px;padding:8px 11px}
+    .flashcard{background:linear-gradient(135deg,#f0f5ff,#fff);border:1px solid #dce7ff;border-radius:17px;padding:22px;min-height:120px;display:grid;place-items:center;text-align:center;font-size:18px;font-weight:700}
+    footer{text-align:center;color:#8993a5;padding:35px 15px;font-size:13px}
+    .overlay{position:fixed;inset:0;background:#10182870;z-index:40;opacity:0;visibility:hidden;transition:.25s}.overlay.show{opacity:1;visibility:visible}.drawer{position:fixed;z-index:41;top:0;right:0;height:100dvh;width:min(410px,92vw);background:#fff;box-shadow:-15px 0 45px #10182820;transform:translateX(105%);transition:.28s;padding:25px;overflow:auto}.drawer.show{transform:translateX(0)}.drawer-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}.drawer-head h2{margin:0;font-size:22px}.close-btn{border:0;background:#f1f4f9;border-radius:10px;width:38px;height:38px;font-size:22px}.auth-tabs{display:flex;background:#f1f4f9;padding:4px;border-radius:12px;margin:18px 0}.auth-tabs button{flex:1;border:0;background:transparent;padding:10px;border-radius:9px;font-weight:700;color:#667085}.auth-tabs button.active{background:#fff;color:var(--blue);box-shadow:0 2px 8px #10182812}.auth-field{margin:13px 0}.auth-field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}.auth-field input{padding:12px}.auth-message{font-size:13px;margin-top:12px;color:#c03939;min-height:20px}.auth-note{background:#f5f8ff;border-radius:12px;padding:13px;color:#667085;font-size:12px;margin-top:18px}.user-box{display:none;background:#f5f8ff;border-radius:14px;padding:16px}.hidden{display:none!important}
+    @media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{position:fixed;z-index:30;left:0;top:72px;width:250px;height:calc(100dvh - 72px);transform:translateX(-105%);transition:.25s;box-shadow:10px 0 30px #10182818}.sidebar.mobile-open{transform:translateX(0)}.menu-btn{display:inline-grid;place-items:center}.topbar{padding:0 4%}.hero-art{font-size:70px}}
+    @media(min-width:901px){.menu-btn{display:none}}
+    @media(max-width:650px){main{padding:20px 15px 50px}.hero{padding:25px 21px}.hero-art{display:none}.grid{grid-template-columns:1fr}.selectors{grid-template-columns:1fr}.subject-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-head{align-items:start;flex-direction:column}.schedule-row{grid-template-columns:1fr 1fr}.schedule-row .small-btn{grid-column:1/-1}.brand{font-size:17px}.topbar{height:65px}.sidebar{top:65px;height:calc(100dvh - 65px)}}
+  </style>
 </head>
 <body>
-<header>
- <div class="header-inner">
-  <div class="topline">
-   <div class="brand"><div class="logo">L</div><div><h1>Learnify India</h1><p>Learn Better • Stay Focused • Achieve More</p></div></div>
-   <div class="header-actions"><button onclick="toggleDark()">🌙 Dark Mode</button><button onclick="logout()">Logout</button></div>
+<div class="app">
+  <header class="topbar">
+    <div class="row-wrap" style="align-items:center;gap:12px">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <a class="brand" href="#home"><span class="brand-mark">L</span><span>Learnify India</span></a>
+    </div>
+    <div class="top-actions">
+      <button class="ghost-btn" id="loginOpenBtn">Login / Sign up</button>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">☾</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="side-label">LEARNING MENU</div>
+      <button class="nav-link active" data-target="home"><span class="nav-ico">⌂</span>Home</button>
+      <button class="nav-link" data-target="classes"><span class="nav-ico">▦</span>Classes & Subjects</button>
+      <button class="nav-link" data-target="study"><span class="nav-ico">📚</span>Study Material</button>
+      <button class="nav-link" data-target="notes"><span class="nav-ico">✎</span>My Notes</button>
+      <button class="nav-link" data-target="timetable"><span class="nav-ico">▤</span>Timetable</button>
+      <button class="nav-link" data-target="quiz"><span class="nav-ico">❔</span>Quick Quiz</button>
+      <button class="nav-link" data-target="flashcards"><span class="nav-ico">▣</span>Flashcards</button>
+      <div class="side-label" style="margin-top:24px">YOUR ACCOUNT</div>
+      <button class="nav-link" id="sidebarLogin"><span class="nav-ico">◉</span>Login / Sign up</button>
+    </aside>
+
+    <main>
+      <section class="hero" id="home">
+        <div>
+          <div style="font-size:12px;font-weight:800;letter-spacing:1.4px;margin-bottom:12px;color:#dce8ff">YOUR LEARNING PARTNER</div>
+          <h1>Learn smarter.<br>Achieve more.</h1>
+          <p>Simple study material, quick quizzes and useful tools for every student. Start learning at your own pace.</p>
+          <button class="primary-btn" onclick="document.getElementById('classes').scrollIntoView({behavior:'smooth'})">Explore Classes →</button>
+        </div>
+        <div class="hero-art" aria-hidden="true">🎓</div>
+      </section>
+
+      <section class="section" id="classes">
+        <div class="section-head"><div><h2>Classes & Subjects</h2><p>Choose your board and class to explore learning resources.</p></div></div>
+        <div class="card">
+          <div class="selectors">
+            <div class="field"><label for="boardSelect">Select Board</label><select id="boardSelect"><option value="RBSE">RBSE</option><option value="CBSE">CBSE</option></select></div>
+            <div class="field"><label for="classSelect">Select Class</label><select id="classSelect"><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option selected>10</option><option>11</option><option>12</option></select></div>
+            <div class="field hidden" id="streamWrap"><label for="streamSelect">Select Stream</label><select id="streamSelect"><option>Science</option><option>Commerce</option><option>Arts</option></select></div>
+          </div>
+          <div class="subject-grid" id="subjectGrid"></div>
+          <p class="muted" id="subjectHint" style="font-size:13px;margin:14px 0 0">Select a subject to view available material.</p>
+        </div>
+      </section>
+
+      <section class="section" id="study">
+        <div class="section-head"><div><h2>Study Material</h2><p>Chapter-wise revision notes and practice questions.</p></div><span class="ghost-btn" style="font-size:12px">Class 10 · Science</span></div>
+        <div class="material-box">
+          <div class="row-wrap" style="align-items:center;justify-content:space-between"><div><span class="muted" style="font-size:12px;font-weight:800">CHAPTER 01</span><h3> Chemical Reactions and Equations</h3></div><span class="ghost-btn">Science</span></div>
+          <p class="muted">Quick revision notes for Class 10 students (RBSE / CBSE aligned basics).</p>
+          <h4>1. Chemical Reaction</h4>
+          <p>A process in which one or more substances (reactants) change into new substances (products) with different properties is called a chemical reaction.</p>
+          <p><b>Common observations:</b> change in colour, change in temperature, evolution of gas, or formation of a precipitate.</p>
+          <h4>2. Chemical Equation</h4>
+          <p>A chemical equation represents a chemical reaction using symbols and formulae. A balanced equation has an equal number of atoms of each element on both sides.</p>
+          <div class="equation">2Mg + O₂ → 2MgO</div>
+          <h4>3. Types of Chemical Reactions</h4>
+          <p><b>Combination:</b> Two or more substances combine to form one product.</p><div class="equation">CaO + H₂O → Ca(OH)₂</div>
+          <p><b>Decomposition:</b> One compound breaks into simpler substances.</p><div class="equation">CaCO₃  --heat→  CaO + CO₂</div>
+          <p><b>Displacement:</b> A more reactive element displaces a less reactive element.</p><div class="equation">Zn + CuSO₄ → ZnSO₄ + Cu</div>
+          <p><b>Double displacement:</b> Ions are exchanged between two compounds.</p><div class="equation">Na₂SO₄ + BaCl₂ → BaSO₄↓ + 2NaCl</div>
+          <h4>4. Oxidation and Reduction</h4>
+          <ul><li><b>Oxidation:</b> Addition of oxygen or removal of hydrogen.</li><li><b>Reduction:</b> Removal of oxygen or addition of hydrogen.</li><li>Oxidation and reduction occur together in a redox reaction.</li></ul>
+          <h4>5. Exothermic and Endothermic Reactions</h4>
+          <ul><li><b>Exothermic:</b> Releases heat energy, e.g. combustion.</li><li><b>Endothermic:</b> Absorbs energy, e.g. thermal decomposition of calcium carbonate.</li></ul>
+          <h4>6. Corrosion and Rancidity</h4>
+          <ul><li><b>Corrosion:</b> Gradual damage of metals due to air, moisture or chemicals. Prevention includes painting, oiling, galvanising and alloying.</li><li><b>Rancidity:</b> Oxidation of fats and oils that causes unpleasant smell and taste. It can be slowed by airtight storage, refrigeration and antioxidants.</li></ul>
+          <h4>Important Questions</h4>
+          <ol><li>What is a balanced chemical equation? Why should an equation be balanced?</li><li>Explain combination and decomposition reactions with examples.</li><li>What is a displacement reaction? Give one example.</li><li>Differentiate between oxidation and reduction.</li><li>What are corrosion and rancidity? How can they be prevented?</li></ol>
+          <div class="equation">Remember: The total number of atoms of each element remains the same before and after a chemical reaction.</div>
+        </div>
+        <div class="card" style="margin-top:16px"><h3>More chapters</h3><p>Additional chapter-wise material will be added in upcoming updates. This page currently contains Chapter 1 notes and practice questions.</p></div>
+      </section>
+
+      <section class="section" id="notes">
+        <div class="section-head"><div><h2>My Notes</h2><p>Write and save your own revision notes on this device.</p></div></div>
+        <div class="card"><div class="field"><label for="notesText">Your notes</label><textarea class="notes-area" id="notesText" placeholder="Write your study notes here..."></textarea></div><div class="row-wrap" style="margin-top:12px"><button class="primary-btn" id="saveNotes">Save Notes</button><span class="muted" id="notesStatus" style="font-size:13px;align-self:center"></span></div></div>
+      </section>
+
+      <section class="section" id="timetable">
+        <div class="section-head"><div><h2>Study Timetable</h2><p>Plan your study sessions and keep your routine organised.</p></div></div>
+        <div class="card"><div class="schedule-row"><input type="time" id="studyTime" aria-label="Study time"><input type="text" id="studySubject" placeholder="Subject / task"><button class="primary-btn" id="addSchedule">Add</button></div><div id="scheduleList"></div></div>
+      </section>
+
+      <section class="section" id="quiz">
+        <div class="section-head"><div><h2>Quick Quiz</h2><p>Test your understanding of Chapter 1.</p></div></div>
+        <div class="card" id="quizContainer">
+          <div class="quiz-q"><p>1. Which gas is usually released when a metal reacts with a dilute acid?</p><label class="option"><input type="radio" name="q1" value="a"> Oxygen</label><label class="option"><input type="radio" name="q1" value="b"> Hydrogen</label><label class="option"><input type="radio" name="q1" value="c"> Nitrogen</label></div>
+          <div class="quiz-q"><p>2. Which reaction is represented by CaO + H₂O → Ca(OH)₂?</p><label class="option"><input type="radio" name="q2" value="a"> Combination</label><label class="option"><input type="radio" name="q2" value="b"> Decomposition</label><label class="option"><input type="radio" name="q2" value="c"> Displacement</label></div>
+          <div class="quiz-q"><p>3. Rusting of iron is an example of:</p><label class="option"><input type="radio" name="q3" value="a"> Rancidity</label><label class="option"><input type="radio" name="q3" value="b"> Corrosion</label><label class="option"><input type="radio" name="q3" value="c"> Neutralisation</label></div>
+          <div class="quiz-q"><p>4. A balanced equation has equal numbers of:</p><label class="option"><input type="radio" name="q4" value="a"> Molecules on both sides</label><label class="option"><input type="radio" name="q4" value="b"> Atoms of each element on both sides</label><label class="option"><input type="radio" name="q4" value="c"> Compounds on both sides</label></div>
+          <div class="quiz-q"><p>5. Rancidity is mainly caused by:</p><label class="option"><input type="radio" name="q5" value="a"> Oxidation of fats and oils</label><label class="option"><input type="radio" name="q5" value="b"> Freezing of water</label><label class="option"><input type="radio" name="q5" value="c"> Evaporation</label></div>
+          <button class="primary-btn" id="submitQuiz">Submit Answers</button><button class="ghost-btn" id="resetQuiz" style="margin-left:7px">Reset</button><div class="result" id="quizResult" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section" id="flashcards">
+        <div class="section-head"><div><h2>Flashcards</h2><p>Tap next to revise important science terms.</p></div></div>
+        <div class="card"><div class="flashcard" id="flashcard">What is a chemical reaction?</div><div class="row-wrap" style="justify-content:center;margin-top:14px"><button class="ghost-btn" id="flipCard">Show Answer</button><button class="primary-btn" id="nextCard">Next Card →</button></div></div>
+      </section>
+      <footer>© 2026 Learnify India · Learn Smarter, Every Day</footer>
+    </main>
   </div>
-  <div class="hero-copy"><h2>Your smart study partner.</h2><p>One place for school notes, practice quizzes and study resources — for RBSE and CBSE students.</p></div>
- </div>
-</header>
-<nav>
- <a href="#dashboard">Home</a><a href="#academics">Classes</a><a href="#study">Study Material</a><a href="#notes">My Notes</a><a href="#timetable">Timetable</a><a href="#quiz">Quiz</a><a href="#flashcards">Flashcards</a>
-</nav>
-<main class="container">
- <section class="card" id="auth">
-  <h2>🔐 Student Account</h2><p class="small">Create an account or log in to Learnify India.</p>
-  <div class="grid">
-   <div><input type="text" id="studentName" placeholder="Your name" autocomplete="name"><input type="email" id="email" placeholder="Email address" autocomplete="email"><input type="password" id="password" placeholder="Password (minimum 6 characters)" autocomplete="current-password"></div>
-   <div><p class="small">Use the same email and password whenever you return.</p><button onclick="signup()">Create Account</button><button onclick="login()">Login</button><button class="secondary" onclick="forgotPassword()">Forgot Password?</button><p id="authMessage" role="status">You can use the study tools without logging in on this device.</p></div>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="authDrawer" aria-label="Student account panel" aria-hidden="true">
+  <div class="drawer-head"><div><div class="muted" style="font-size:12px;font-weight:800;letter-spacing:1px">LEARNIFY INDIA</div><h2>Student Account</h2></div><button class="close-btn" id="closeDrawer" aria-label="Close">×</button></div>
+  <div id="authForms">
+    <p class="muted" style="font-size:14px">Login to your account or create a free student account.</p>
+    <div class="auth-tabs"><button class="active" id="loginTab">Login</button><button id="signupTab">Sign up</button></div>
+    <div class="auth-field hidden" id="nameField"><label for="studentName">Your name</label><input id="studentName" type="text" placeholder="Enter your name" autocomplete="name"></div>
+    <div class="auth-field"><label for="authEmail">Email address</label><input id="authEmail" type="email" placeholder="name@example.com" autocomplete="email"></div>
+    <div class="auth-field"><label for="authPassword">Password</label><input id="authPassword" type="password" placeholder="At least 6 characters" autocomplete="current-password"></div>
+    <button class="primary-btn" id="authSubmit" style="width:100%;margin-top:8px">Login</button>
+    <button class="ghost-btn" id="forgotPassword" style="width:100%;margin-top:10px">Forgot password?</button>
+    <div class="auth-message" id="authMessage" aria-live="polite"></div>
+    <div class="auth-note">You can use the study material, notes, timetable and quiz without logging in. Notes and timetable are saved on this device.</div>
   </div>
- </section>
- <section class="card" id="dashboard">
-  <h2>👋 Welcome to Learnify India!</h2><p id="welcomeText">Choose your board and class to get started.</p>
-  <div class="stats"><div class="stat"><strong id="dashNotes">0</strong><span>Saved notes</span></div><div class="stat"><strong id="dashSchedule">0</strong><span>Timetable entries</span></div><div class="stat"><strong>5–12</strong><span>Classes</span></div></div>
- </section>
- <section class="card" id="academics">
-  <h2>🎓 Choose Your Board & Class</h2>
-  <div class="grid">
-   <div><label for="boardSelect"><b>Board</b></label><select id="boardSelect" onchange="updateAcademicSelection()"><option value="RBSE">RBSE – Rajasthan Board</option><option value="CBSE">CBSE – Central Board</option></select></div>
-   <div><label for="classSelect"><b>Class</b></label><select id="classSelect" onchange="updateAcademicSelection()"><option value="5">Class 5</option><option value="6">Class 6</option><option value="7">Class 7</option><option value="8">Class 8</option><option value="9">Class 9</option><option value="10">Class 10</option><option value="11">Class 11</option><option value="12">Class 12</option></select></div>
-  </div>
-  <div id="streamWrap" class="hidden"><label for="streamSelect"><b>Stream (Class 11–12)</b></label><select id="streamSelect" onchange="updateAcademicSelection()"><option value="Science">Science</option><option value="Commerce">Commerce</option><option value="Arts">Arts</option></select></div>
-  <div style="margin-top:12px"><span class="pill" id="selectedBoard">RBSE</span><span class="pill" id="selectedClass">Class 5</span><span class="pill hidden" id="selectedStream">Science</span></div>
-  <h3 style="margin-top:18px">Your subjects</h3><div class="subject-grid" id="subjectGrid"></div>
-  <p class="notice" style="margin-top:15px">Class 10 Science study material is currently available as a starter section. Other subjects and chapters can be added next.</p>
- </section>
- <section class="card" id="study">
-  <h2>📚 Class 10 Science – Study Material</h2>
-  <p class="small">English study material for RBSE and CBSE learners. Select a chapter to read its notes, important questions and practice MCQs.</p>
-  <div class="chapter-list" id="chapterList"></div>
-  <div id="chapterContent" class="study-content hidden"></div>
- </section>
- <section class="card" id="notes">
-  <h2>📝 My Notes</h2><input id="noteTitle" placeholder="Note title"><textarea id="noteText" rows="3" placeholder="Write your notes..."></textarea><button onclick="saveNote()">Save Note</button><div id="notesList"></div>
- </section>
- <section class="card" id="timetable">
-  <h2>📅 Study Timetable</h2><div class="grid"><input id="subject" placeholder="Subject name"><input id="studyTime" type="time"></div><button onclick="addSchedule()">Add to Timetable</button><div id="scheduleList"></div>
- </section>
- <section class="card" id="quiz">
-  <h2>🧠 Quick Quiz</h2><p id="question">Loading question...</p><div id="options"></div><p id="quizResult" role="status"></p><p id="score"></p><button onclick="nextQuestion()">Next Question ➜</button>
- </section>
- <section class="card" id="flashcards">
-  <h2>📖 Flashcards</h2><input id="flashQ" placeholder="Enter question"><input id="flashA" placeholder="Enter answer"><button onclick="addFlashcard()">Add Flashcard</button><div class="flashcard" id="flashDisplay">Your flashcards will appear here.</div><button onclick="showAnswer()">Show Answer</button><button class="secondary" onclick="nextFlashcard()">Next Card ➜</button>
- </section>
-</main>
-<footer><p>Made with ❤️ for Students</p><p>Learnify India © 2026</p></footer>
+  <div class="user-box" id="userBox"><div style="font-size:30px">👋</div><h3 id="welcomeName">Welcome!</h3><p class="muted" id="userEmail"></p><button class="ghost-btn" id="logoutBtn">Log out</button></div>
+</aside>
+
 <script>
-const $=id=>document.getElementById(id);
-function getData(key){try{return JSON.parse(localStorage.getItem(key)||"[]")}catch(e){return []}}
-function saveData(key,data){localStorage.setItem(key,JSON.stringify(data))}
-function safe(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-function toggleDark(){document.body.classList.toggle("dark");localStorage.setItem("lifedark",document.body.classList.contains("dark"))}
-if(localStorage.getItem("lifedark")==="true")document.body.classList.add("dark");
-const subjectSets={"5":["English","Hindi","Mathematics","EVS"],"6":["English","Hindi","Mathematics","Science","Social Science"],"7":["English","Hindi","Mathematics","Science","Social Science"],"8":["English","Hindi","Mathematics","Science","Social Science"],"9":["English","Hindi","Mathematics","Science","Social Science"],"10":["English","Hindi","Mathematics","Science","Social Science"],"11":{"Science":["Physics","Chemistry","Mathematics","Biology","English"],"Commerce":["Accountancy","Business Studies","Economics","English"],"Arts":["History","Political Science","Geography","Economics","English"]},"12":{"Science":["Physics","Chemistry","Mathematics","Biology","English"],"Commerce":["Accountancy","Business Studies","Economics","English"],"Arts":["History","Political Science","Geography","Economics","English"]}};
-function updateAcademicSelection(){
- const board=$("boardSelect").value,cls=$("classSelect").value,isSenior=Number(cls)>=11;
- $("streamWrap").classList.toggle("hidden",!isSenior);$("selectedBoard").textContent=board;$("selectedClass").textContent="Class "+cls;$("selectedStream").classList.toggle("hidden",!isSenior);
- let stream=$("streamSelect").value;$("selectedStream").textContent=stream;
- const subjects=Array.isArray(subjectSets[cls])?subjectSets[cls]:subjectSets[cls][stream];
- $("subjectGrid").innerHTML=subjects.map(s=>`<div class="subject-tile"><strong>${safe(s)}</strong><span class="small">${board} • Class ${cls}</span></div>`).join("");
- $("welcomeText").textContent=`You are viewing ${board} Class ${cls}${isSenior?" • "+stream+" stream":""}.`;
- localStorage.setItem("learnifyBoard",board);localStorage.setItem("learnifyClass",cls);localStorage.setItem("learnifyStream",stream);
-}
-$("boardSelect").value=localStorage.getItem("learnifyBoard")||"RBSE";$("classSelect").value=localStorage.getItem("learnifyClass")||"5";$("streamSelect").value=localStorage.getItem("learnifyStream")||"Science";updateAcademicSelection();
+(() => {
+  "use strict";
+  const $ = (id) => document.getElementById(id);
+  const safeGet = (key, fallback="") => { try { return localStorage.getItem(key) ?? fallback; } catch { return fallback; } };
+  const safeSet = (key, value) => { try { localStorage.setItem(key, value); return true; } catch { return false; } };
 
-const scienceChapter={
-title:"Chemical Reactions and Equations",
-html:`
-<h3>1. Chemical Reaction</h3>
-<p>A chemical reaction is a process in which one or more substances (reactants) change into new substances (products).</p>
-<h3>2. Chemical Equation</h3>
-<p>A chemical equation is the symbolic representation of a chemical reaction using chemical formulae. A balanced chemical equation has an equal number of atoms of each element on both sides.</p>
-<h3>3. Characteristics of Chemical Reactions</h3>
-<ul><li>Change in colour</li><li>Change in temperature</li><li>Evolution of gas</li><li>Formation of a precipitate</li><li>Change in state</li></ul>
-<h3>4. Types of Chemical Reactions</h3>
-<p><b>Combination reaction:</b> Two or more substances combine to form one product.</p><div class="equation">2Mg + O₂ → 2MgO</div>
-<p><b>Decomposition reaction:</b> One compound breaks into two or more simpler substances.</p><div class="equation">CaCO₃ —heat→ CaO + CO₂</div>
-<p><b>Displacement reaction:</b> A more reactive element displaces a less reactive element.</p><div class="equation">Zn + CuSO₄ → ZnSO₄ + Cu</div>
-<p><b>Double displacement reaction:</b> Two compounds exchange their ions.</p><div class="equation">Na₂SO₄ + BaCl₂ → BaSO₄ + 2NaCl</div>
-<p><b>Oxidation:</b> Addition of oxygen or removal of hydrogen. <b>Reduction:</b> Removal of oxygen or addition of hydrogen.</p>
-<h3>5. Exothermic and Endothermic Reactions</h3>
-<p><b>Exothermic reaction:</b> A reaction in which heat is released.</p><div class="equation">CH₄ + 2O₂ → CO₂ + 2H₂O + Heat</div>
-<p><b>Endothermic reaction:</b> A reaction in which heat is absorbed.</p><div class="equation">CaCO₃ + Heat → CaO + CO₂</div>
-<h3>6. Corrosion</h3>
-<p>Corrosion is the gradual deterioration of metals due to their reaction with air, moisture or chemicals. Rusting of iron is a common example.</p>
-<p><b>Prevention:</b> Painting, oiling, greasing, galvanisation and alloying.</p>
-<h3>7. Rancidity</h3>
-<p>Rancidity is the oxidation of fats and oils in food, causing an unpleasant smell and taste.</p>
-<p><b>Prevention:</b> Store food in airtight containers, refrigerate it, add antioxidants or pack it with nitrogen gas.</p>
-<h3>Important Questions and Answers</h3>
-<ol>
-<li><b>What is a chemical reaction?</b><br>A process in which reactants are converted into new substances called products.</li>
-<li><b>Why should a chemical equation be balanced?</b><br>To obey the law of conservation of mass; atoms are neither created nor destroyed in a chemical reaction.</li>
-<li><b>What is a combination reaction?</b><br>A reaction in which two or more substances combine to form a single product.</li>
-<li><b>What is a decomposition reaction?</b><br>A reaction in which one compound breaks into two or more simpler substances.</li>
-<li><b>Define oxidation and reduction.</b><br>Oxidation involves addition of oxygen or removal of hydrogen; reduction involves removal of oxygen or addition of hydrogen.</li>
-<li><b>What is corrosion?</b><br>The gradual deterioration of a metal due to reactions with its surroundings.</li>
-<li><b>What is rancidity?</b><br>Oxidation of fats and oils that changes the smell and taste of food.</li>
-</ol>
-<h3>Practice MCQs</h3>
-<div id="scienceMcqs"></div>
-<p class="notice">Study note: These are concise revision notes written for practice. Always compare chapter coverage with the latest syllabus issued by your board.</p>`
-};
-const mcqs=[
-{q:"Which gas is released when zinc reacts with dilute hydrochloric acid?",o:["Oxygen","Hydrogen","Nitrogen","Carbon dioxide"],a:1},
-{q:"What is the chemical formula of quicklime?",o:["CaCO₃","CaO","Ca(OH)₂","Na₂O"],a:1},
-{q:"Rusting of iron is an example of:",o:["Reduction","Corrosion","Neutralisation","Decomposition"],a:1},
-{q:"Which reaction involves exchange of ions?",o:["Combination","Decomposition","Double displacement","Displacement"],a:2},
-{q:"Which gas is commonly used in food packets to prevent rancidity?",o:["Oxygen","Nitrogen","Hydrogen","Carbon dioxide"],a:1},
-{q:"Burning of magnesium is an example of:",o:["Combination","Displacement","Decomposition","Double displacement"],a:0},
-{q:"Which of these is an exothermic process?",o:["Photosynthesis","Thermal decomposition","Combustion","Electrolysis"],a:2},
-{q:"The yellow precipitate formed by lead nitrate and potassium iodide is:",o:["Lead chloride","Lead iodide","Potassium nitrate","Zinc iodide"],a:1},
-{q:"The law of conservation of mass states that mass is:",o:["Created","Destroyed","Neither created nor destroyed","Always increased"],a:2},
-{q:"Coating iron with zinc to prevent rusting is called:",o:["Oxidation","Galvanisation","Reduction","Crystallisation"],a:1}
-];
-function renderMcqs(){
- const el=$("scienceMcqs");if(!el)return;
- el.innerHTML=mcqs.map((m,i)=>`<div class="task" style="display:block"><b>${i+1}. ${safe(m.q)}</b>${m.o.map((v,j)=>`<label style="display:block;margin:8px"><input style="width:auto;margin-right:7px" type="radio" name="mcq${i}" value="${j}">${safe(v)}</label>`).join("")}<button class="secondary" onclick="checkScienceMcq(${i})">Check Answer</button><span id="mcqResult${i}" class="small"></span></div>`).join("");
-}
-function checkScienceMcq(i){const chosen=document.querySelector(`input[name="mcq${i}"]:checked`);const result=$("mcqResult"+i);if(!chosen){result.textContent=" Please select an option.";return}result.textContent=Number(chosen.value)===mcqs[i].a?" ✅ Correct!":" ❌ Correct answer: "+mcqs[i].o[mcqs[i].a];}
-function showChapter1(){$("chapterContent").classList.remove("hidden");$("chapterContent").innerHTML=`<h2>Chapter 1: ${scienceChapter.title}</h2>${scienceChapter.html}`;renderMcqs();$("chapterContent").scrollIntoView({behavior:"smooth",block:"start"});}
-function buildChapters(){
- const list=$("chapterList");
- list.innerHTML=`<button class="chapter-btn" onclick="showChapter1()"><b>Chapter 1</b><br>Chemical Reactions and Equations<br><span class="small">Notes • Questions • MCQs</span></button><div class="chapter-btn" style="opacity:.7"><b>Chapters 2–13</b><br>Coming soon</div>`;
-}
-buildChapters();
+  // Navigation and mobile sidebar
+  const sidebar = $("sidebar");
+  $("menuBtn").addEventListener("click", () => sidebar.classList.toggle("mobile-open"));
+  document.querySelectorAll(".nav-link[data-target]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".nav-link").forEach(x => x.classList.remove("active"));
+      btn.classList.add("active");
+      const target = $(btn.dataset.target);
+      if (target) target.scrollIntoView({behavior:"smooth", block:"start"});
+      sidebar.classList.remove("mobile-open");
+    });
+  });
 
-function saveNote(){let title=$("noteTitle").value.trim(),text=$("noteText").value.trim();if(!title||!text)return alert("Enter title and notes");let a=getData("sbnotes");a.push({title,text});saveData("sbnotes",a);$("noteTitle").value="";$("noteText").value="";showNotes()}
-function showNotes(){$("notesList").innerHTML=getData("sbnotes").map((n,i)=>`<div class="task"><span><b>${safe(n.title)}</b><br>${safe(n.text)}</span><div class="task-actions"><button class="danger" onclick="deleteNote(${i})">Delete</button></div></div>`).join("")||'<p class="small">No notes saved yet.</p>';$("dashNotes").textContent=getData("sbnotes").length}
-function deleteNote(i){let a=getData("sbnotes");a.splice(i,1);saveData("sbnotes",a);showNotes()}
-function addSchedule(){let s=$("subject").value.trim(),t=$("studyTime").value;if(!s||!t)return alert("Enter subject and 
+  // Login panel slides in from the right side, like a modern app drawer
+  const drawer = $("authDrawer"), overlay = $("overlay");
+  function openDrawer(){ drawer.classList.add("show"); overlay.classList.add("show"); drawer.setAttribute("aria-hidden","false"); }
+  function closeDrawer(){ drawer.classList.remove("show"); overlay.classList.remove("show"); drawer.setAttribute("aria-hidden","true"); }
+  $("loginOpenBtn").addEventListener("click", openDrawer);
+  $("sidebarLogin").addEventListener("click", () => { sidebar.classList.remove("mobile-open"); openDrawer(); });
+  $("closeDrawer").addEventListener("click", closeDrawer);
+  overlay.addEventListener("click", closeDrawer);
+  document.addEventListener("keydown", e => { if(e.key === "Escape"){closeDrawer();sidebar.classList.remove("mobile-open");} });
+
+  // Board, class and subjects
+  const boardSelect = $("boardSelect"), classSelect = $("classSelect"), streamWrap = $("streamWrap");
+  const subjectGrid = $("subjectGrid");
+  const subjectSets = {
+    "5":["English","Hindi","Mathematics","Environmental Studies"],
+    "6":["English","Hindi","Mathematics","Science","Social Science"],
+    "7":["English","Hindi","Mathematics","Science","Social Science"],
+    "8":["English","Hindi","Mathematics","Science","Social Science"],
+    "9":["English","Hindi","Mathematics","Science","Social Science"],
+    "10":["English","Hindi","Mathematics","Science","Social Science"],
+    "11":["Physics","Chemistry","Biology","Mathematics","Accountancy","Business Studies","Economics","History","Political Science","Geography"],
+    "12":["Physics","Chemistry","Biology","Mathematics","Accountancy","Business Studies","Economics","History","Political Science","Geography"]
+  };
+  function renderSubjects(){
+    const cls = classSelect.value;
+    streamWrap.classList.toggle("hidden", Number(cls) < 11);
+    let subjects = subjectSets[cls] || [];
+    if(Number(cls) >= 11){
+      const stream = $("streamSelect").value;
+      if(stream === "Science") subjects = ["Physics","Chemistry","Biology","Mathematics","English"];
+      if(stream === "Commerce") subjects = ["Accountancy","Business Studies","Economics","Mathematics","English"];
+      if(stream === "Arts") subjects = ["History","Political Science","Geography","Economics","English"];
+    }
+    subjectGrid.innerHTML = "";
+    subjects.forEach(subject => {
+      const b = document.createElement("button");
+      b.className = "subject"; b.type = "button"; b.textContent = subject + " →";
+      b.addEventListener("click", () => {
+        $("subjectHint").textContent = `${boardSelect.value} · Class ${cls} · ${subject} selected. Available chapter material is shown in the Study Material section when published.`;
+        if(cls === "10" && subject === "Science") $("study").scrollIntoView({behavior:"smooth"});
+      });
+      subjectGrid.appendChild(b);
+    });
+    safeSet("learnifyBoard", boardSelect.value); safeSet("learnifyClass", cls); safeSet("learnifyStream", $("streamSelect").value);
+  }
+  boardSelect.value = safeGet("learnifyBoard","RBSE");
+  classSelect.value = safeGet("learnifyClass","10");
+  $("streamSelect").value = safeGet("learnifyStream","Science");
+  [boardSelect,classSelect,$("streamSelect")].forEach(el => el.addEventListener("change", renderSubjects));
+  renderSubjects();
+
+  // Notes are saved locally
+  $("notesText").value = safeGet("learnifyNotes","");
+  $("saveNotes").addEventListener("click", () => {
+    const ok = safeSet("learnifyNotes", $("notesText").value);
+    $("notesStatus").textContent = ok ? "Saved on this device ✓" : "Could not save. Check device storage.";
+  });
+
+  // Timetable
+  let schedule = [];
+  try { schedule = JSON.parse(safeGet("learnifySchedule","[]")); if(!Array.isArray(schedule)) schedule=[]; } catch { schedule=[]; }
+  function renderSchedule(){
+    const list = $("scheduleList"); list.innerHTML = "";
+    if(!schedule.length){ list.innerHTML = '<p class="muted" style="font-size:14px">No study sessions added yet.</p>'; return; }
+    schedule.sort((a,b) => a.time.localeCompare(b.time));
+    schedule.forEach((item,index) => {
+      const row = document.createElement("div"); row.className = "schedule-row";
+      const time = document.createElement("div"); time.textContent = item.time; time.style.padding="10px"; time.style.fontWeight="700";
+      const subject = document.createElement("div"); subject.textContent = item.subject; subject.style.padding="10px";
+      const del = document.createElement("button"); del.className="small-btn"; del.textContent="Remove";
+      del.addEventListener("click",()=>{schedule.splice(index,1);saveSchedule();});
+      row.append(time,subject,del); list.appendChild(row);
+    });
+  }
+  function saveSchedule(){ safeSet("learnifySchedule",JSON.stringify(schedule)); renderSchedule(); }
+  $("addSchedule").addEventListener("click",()=>{
+    const time=$("studyTime").value, subject=$("studySubject").value.trim();
+    if(!time || !subject){ alert("Please enter both time and subject."); return; }
+    schedule.push({time,subject}); $("studySubject").value=""; saveSchedule();
+  });
+  renderSchedule();
+
+  // Quiz
+  const answers = {q1:"b",q2:"a",q3:"b",q4:"b",q5:"a"};
+  $("submitQuiz").addEventListener("click",()=>{
+    let score=0, attempted=0;
+    Object.entries(answers).forEach(([q,answer])=>{
+      const chosen=document.querySelector(`input[name="${q}"]:checked`);
+      if(chosen){attempted++; if(chosen.value===answer)score++;}
+    });
+    $("quizResult").textContent=`Your score: ${score}/5 · Attempted: ${attempted}/5`;
+  });
+  $("resetQuiz").addEventListener("click",()=>{
+    document.querySelectorAll('#quizContainer input[type="radio"]').forEach(i=>i.checked=false);
+    $("quizResult").textContent="";
+  });
+
+  // Flashcards
+  const cards = [
+    ["What is a chemical reaction?","A process in which reactants change into new substances called products."],
+    ["What is a balanced chemical equation?","An equation with the same number of atoms of each element on both sides."],
+    ["What is oxidation?","Addition of oxygen or removal of hydrogen."],
+    ["What is reduction?","Removal of oxygen or addition of hydrogen."],
+    ["What is corrosion?","The gradual damage of a metal due to its reaction with the environment."],
+    ["What is rancidity?","Oxidation of fats and oils that causes unpleasant smell and taste."]
+  ];
+  let cardIndex=0, showingAnswer=false;
+  function showCard(){ $("flashcard").textContent=showingAnswer?cards[cardIndex][1]:cards[cardIndex][0]; $("flipCard").textContent=showingAnswer?"Show Question":"Show Answer"; }
+  $("flipCard").addEventListener("click",()=>{showingAnswer=!showingAnswer;showCard();});
+  $("nextCard").addEventListener("click",()=>{cardIndex=(cardIndex+1)%cards.length;showingAnswer=false;showCard();});
+
+  // Light/dark theme
+  const darkStyle = document.createElement("style");
+  darkStyle.textContent = `body.dark{--ink:#edf2ff;--muted:#a9b4c8;--bg:#101827;--card:#182337;--line:#2b3850;--soft:#23385f;--shadow:0 10px 30px #0003}body.dark .topbar,body.dark .sidebar,body.dark .drawer{background:#151f30}body.dark .icon-btn,body.dark .field select,body.dark .field input,body.dark .field textarea,body.dark .auth-field input,body.dark .subject{background:#182337;color:var(--ink);border-color:var(--line)}body.dark .material-box,body.dark .card{background:#182337}body.dark .equation,body.dark .flashcard,body.dark .auth-note,body.dark .user-box{background:#202e45;color:#edf2ff;border-color:#344766}body.dark .auth-tabs{background:#202e45}body.dark .auth-tabs button.active{background:#344766;color:#fff}body.dark .option{color:#d0d8e8}`;
+  document.head.appendChild(darkStyle);
+  if(safeGet("learnifyDark","") === "yes") document.body.classList.add("dark");
+  $("themeBtn").addEventListener("click",()=>{document.body.classList.toggle("dark");safeSet("learnifyDark",document.body.classList.contains("dark")?"yes":"no");});
+
+  // Firebase authentication. The public web config identifies the project; security is enforced by Firebase rules.
+  const firebaseConfig = {
+    apiKey: "AIzaSyAlRnJF1uKWP2XTSVnS1y5_9jg6hx5J0ns",
+    authDomain: "studybuddy-75864.firebaseapp.com",
+    projectId: "studybuddy-75864",
+    storageBucket: "studybuddy-75864.firebasestorage.app",
+    messagingSenderId: "1011565103905",
+    appId: "1:1011565103905:web:492517c69352e67b2e8c60",
+    measurementId: "G-V1Z0HN1TVD"
+  };
+  let auth = null, createUser=null, signIn=null, sendReset=null, signOutUser=null, onAuth=null, updateUserProfile=null;
+  let authMode = "login";
+  function setAuthMessage(message, success=false){ $("authMessage").textContent=message; $("authMessage").style.color=success?"#15945a":"#c03939"; }
+  function setAuthMode(mode){
+    authMode=mode;
+    $("loginTab").classList.toggle("active",mode==="login");
+    $("signupTab").classList.toggle("active",mode==="signup");
+    $("nameField").classList.toggle("hidden",mode!=="signup");
+    $("authSubmit").textContent=mode==="login"?"Login":"Create account";
+    $("forgotPassword").classList.toggle("hidden",mode!=="login");
+    $("authPassword").autocomplete=mode==="login"?"current-password":"new-password";
+    setAuthMessage("");
+  }
+  $("loginTab").addEventListener("click",()=>setAuthMode("login"));
+  $("signupTab").addEventListener("click",()=>setAuthMode("signup"));
+  $("authSubmit").addEventListener("click",async()=>{
+    const email=$("authEmail").value.trim(), password=$("authPassword").value, name=$("studentName").value.trim();
+    if(!email || !password){setAuthMessage("Please enter your email and password.");return;}
+    if(password.length<6){setAuthMessage("Password must be at least 6 characters.");return;}
+    if(!auth){setAuthMessage("Account service is unavailable right now. You can still use the study material.");return;}
+    $("authSubmit").disabled=true;
+    try{
+      if(authMode==="signup"){
+        if(!name){setAuthMessage("Please enter your name.");return;}
+        const credential=await createUser(auth,email,password);
+        if(updateUserProfile) await updateUserProfile(credential.user,{displayName:name});
+        setAuthMessage("Account created successfully!",true);
+      }else{
+        await signIn(auth,email,password);
+        setAuthMessage("Login successful!",true);
+      }
+    }catch(error){setAuthMessage(error?.message || "Something went wrong. Please try again.");}
+    finally{$("authSubmit").disabled=false;}
+  });
+  $("forgotPassword").addEventListener("click",async()=>{
+    const email=$("authEmail").value.trim();
+    if(!email){setAuthMessage("Enter your email address first.");return;}
+    if(!auth || !sendReset){setAuthMessage("Password reset is unavailable right now.");return;}
+    try{await sendReset(auth,email);setAuthMessage("Password reset email sent. Check your inbox.",true);}
+    catch(error){setAuthMessage(error?.message || "Could not send reset email.");}
+  });
+  $("logoutBtn").addEventListener("click",async()=>{
+    if(!auth || !signOutUser)return;
+    try{await signOutUser(auth);setAuthMessage("Logged out successfully.",true);}
+    catch(error){setAuthMessage(error?.message || "Could not log out.");}
+  });
+  function updateAccount(user){
+    const loggedIn=!!user;
+    $("authForms").classList.toggle("hidden",loggedIn);
+    $("userBox").style.display=loggedIn?"block":"none";
+    if(user){$("welcomeName").textContent=`Welcome, ${user.displayName || "Student"}!`;$("userEmail").textContent=user.email || "";}
+    $("loginOpenBtn").textContent=loggedIn?"My Account":"Login / Sign up";
+  }
+  import("https://www.gstatic.com/firebasejs/13.2.0/firebase-app.js")
+    .then(async appSdk=>{
+      const authSdk=await import("https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js");
+      const app=appSdk.initializeApp(firebaseConfig);
+      auth=authSdk.getAuth(app);
+      createUser=authSdk.createUserWithEmailAndPassword;
+      signIn=authSdk.signInWithEmailAndPassword;
+      sendReset=authSdk.sendPasswordResetEmail;
+      signOutUser=authSdk.signOut;
+      onAuth=authSdk.onAuthStateChanged;
+      updateUserProfile=authSdk.updateProfile;
+      onAuth(auth,updateAccount);
+    })
+    .catch(error=>{console.warn("Firebase authentication did not initialise:",error);setAuthMessage("Account service could not connect. Study resources remain available.");});
+})();
+</script>
+</body>
+</html>
