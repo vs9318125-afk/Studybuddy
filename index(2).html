@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="IjuhPZw_FG7tFD_gMiqeDIS9il__pJ4O4tK3-e7kDK8">
+  <meta name="theme-color" content="#155eef">
+  <meta name="description" content="Learnify India - Free study notes, quizzes and learning resources for RBSE and CBSE students from Classes 5 to 12.">
+  <title>Learnify India | Learn Smarter</title>
+  <style>
+    :root{--blue:#1457c5;--blue2:#0b3f9e;--ink:#15233b;--muted:#64748b;--bg:#f3f6fc;--card:#fff;--line:#e4eaf3;--soft:#edf4ff;--green:#12845a;--shadow:0 14px 38px rgba(21,45,88,.07)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}
+    button,input,select,textarea{font:inherit}button{cursor:pointer}.app{min-height:100vh}.topbar{height:76px;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 5%;position:sticky;top:0;z-index:20}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:20px;color:var(--ink);text-decoration:none}.brand-mark{width:39px;height:39px;border-radius:13px;background:linear-gradient(135deg,#155eef,#6ea8ff);display:grid;place-items:center;color:#fff;font-weight:900;box-shadow:0 6px 15px #155eef35}
+    .top-actions{display:flex;align-items:center;gap:10px}.pill-btn,.primary-btn,.ghost-btn{border:0;border-radius:12px;padding:10px 16px;font-weight:700}.primary-btn{background:var(--blue);color:#fff}.primary-btn:hover{background:var(--blue2)}.ghost-btn{background:var(--soft);color:var(--blue)}.icon-btn{width:42px;height:42px;border:1px solid var(--line);background:#fff;border-radius:12px;color:var(--ink);font-size:20px}
+    .layout{display:grid;grid-template-columns:235px minmax(0,1fr);max-width:1480px;margin:auto}.sidebar{padding:26px 16px;border-right:1px solid var(--line);min-height:calc(100vh - 72px);background:#fff;position:sticky;top:72px;height:calc(100vh - 72px);overflow:auto}
+    .side-label{font-size:11px;font-weight:800;color:#98a2b3;letter-spacing:1.2px;padding:10px 13px}.nav-link{width:100%;display:flex;align-items:center;gap:12px;padding:12px 13px;border:0;background:transparent;color:#536078;border-radius:12px;text-align:left;font-weight:650;margin:3px 0}.nav-link:hover,.nav-link.active{background:var(--soft);color:var(--blue)}.nav-ico{width:23px;text-align:center;font-size:17px}
+    main{padding:30px clamp(18px,4vw,58px) 76px;min-width:0}.hero{background:radial-gradient(circle at 85% 20%,#79b5ff 0,transparent 27%),linear-gradient(118deg,#0b347c,#1457c5 58%,#347ce0);color:white;padding:clamp(26px,4vw,44px);border-radius:27px;display:flex;align-items:center;justify-content:space-between;gap:24px;box-shadow:0 20px 48px rgba(20,87,197,.2);overflow:hidden;position:relative}.hero h1{font-size:clamp(27px,4vw,42px);line-height:1.15;margin:0 0 12px;max-width:650px}.hero p{margin:0 0 22px;color:#eaf1ff;max-width:590px}.hero .primary-btn{background:#fff;color:var(--blue)}.hero-art{font-size:95px;opacity:.95;padding:0 18px}
+    .section{margin-top:38px;scroll-margin-top:100px;padding-top:2px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:17px}.section-head h2{font-size:23px;letter-spacing:-.35px;margin:0}.section-head p{margin:4px 0 0;color:var(--muted);font-size:14px}.muted{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.home-tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}.home-tool{display:flex;align-items:center;gap:13px;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:17px;padding:17px;box-shadow:var(--shadow);transition:.2s;min-width:0}.home-tool:hover{transform:translateY(-3px);border-color:#b8cff7;box-shadow:0 16px 35px rgba(21,45,88,.11)}.home-tool-icon{width:46px;height:46px;flex:0 0 46px;border-radius:14px;background:var(--soft);display:grid;place-items:center;font-size:22px}.home-tool strong{display:block;font-size:14px}.home-tool small{display:block;color:var(--muted);font-size:12px;margin-top:3px}.welcome-strip{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:26px 0 0;padding:15px 18px;border:1px solid #dce8fb;border-radius:15px;background:linear-gradient(90deg,#f0f6ff,#fff)}.welcome-strip strong{font-size:14px}.welcome-strip span{font-size:12px;color:var(--muted)}.card{background:var(--card);border:1px solid var(--line);border-radius:19px;padding:22px;box-shadow:var(--shadow)}.feature-card{transition:.2s}.feature-card:hover{transform:translateY(-3px);border-color:#bfd2ff}.feature-icon{width:45px;height:45px;border-radius:14px;background:var(--soft);display:grid;place-items:center;font-size:22px;margin-bottom:13px}.card h3{font-size:17px;margin:0 0 6px}.card p{font-size:14px;color:var(--muted);margin:0 0 15px}
+    .selectors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}.field select,.field input,.field textarea,.auth-field input{width:100%;border:1px solid #d9e1ee;border-radius:11px;padding:11px 12px;background:#fff;color:var(--ink);outline:none}.field select:focus,.field input:focus,.field textarea:focus,.auth-field input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #155eef18}
+    .subject-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:17px}.subject{padding:16px;border:1px solid var(--line);background:#fff;border-radius:14px;text-align:left;font-weight:700;color:var(--ink)}.subject:hover{border-color:var(--blue);background:var(--soft);color:var(--blue)}
+    .material-box{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:16px}.material-box h3{margin:0 0 8px}.material-box h4{margin:18px 0 7px}.material-box li{margin:6px 0}.equation{background:#f1f5ff;border:1px solid #e0e9ff;padding:10px 13px;border-radius:10px;font-family:ui-monospace,monospace;overflow-wrap:anywhere;margin:8px 0}
+    .quiz-q{padding:16px 0;border-bottom:1px solid var(--line)}.quiz-q:last-child{border:0}.quiz-q p{font-weight:700;margin:0 0 10px}.option{display:block;margin:7px 0;color:#475467;font-size:14px}.option input{margin-right:8px;accent-color:var(--blue)}.result{font-weight:800;margin-top:14px;color:var(--green)}
+    .notes-area{min-height:125px;resize:vertical}.row-wrap{display:flex;gap:10px;flex-wrap:wrap}.schedule-row{display:grid;grid-template-columns:1fr 1.5fr auto;gap:9px;margin:9px 0}.schedule-row input{min-width:0;border:1px solid var(--line);padding:10px;border-radius:10px}.small-btn{border:0;background:#feecec;color:#c03939;border-radius:9px;padding:8px 11px}
+    .flashcard{background:linear-gradient(135deg,#f0f5ff,#fff);border:1px solid #dce7ff;border-radius:17px;padding:22px;min-height:120px;display:grid;place-items:center;text-align:center;font-size:18px;font-weight:700}
+    footer{text-align:center;color:#8993a5;padding:42px 15px 28px;font-size:13px;border-top:1px solid var(--line);margin-top:42px}a:focus-visible,button:focus-visible{outline:3px solid #8bb8ff;outline-offset:3px}
+    .overlay{position:fixed;inset:0;background:#10182870;z-index:40;opacity:0;visibility:hidden;transition:.25s}.overlay.show{opacity:1;visibility:visible}.drawer{position:fixed;z-index:41;top:0;right:0;height:100dvh;width:min(410px,92vw);background:#fff;box-shadow:-15px 0 45px #10182820;transform:translateX(105%);transition:.28s;padding:25px;overflow:auto}.drawer.show{transform:translateX(0)}.drawer-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}.drawer-head h2{margin:0;font-size:22px}.close-btn{border:0;background:#f1f4f9;border-radius:10px;width:38px;height:38px;font-size:22px}.auth-tabs{display:flex;background:#f1f4f9;padding:4px;border-radius:12px;margin:18px 0}.auth-tabs button{flex:1;border:0;background:transparent;padding:10px;border-radius:9px;font-weight:700;color:#667085}.auth-tabs button.active{background:#fff;color:var(--blue);box-shadow:0 2px 8px #10182812}.auth-field{margin:13px 0}.auth-field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}.auth-field input{padding:12px}.auth-message{font-size:13px;margin-top:12px;color:#c03939;min-height:20px}.auth-note{background:#f5f8ff;border-radius:12px;padding:13px;color:#667085;font-size:12px;margin-top:18px}.user-box{display:none;background:#f5f8ff;border-radius:14px;padding:16px}.hidden{display:none!important}
+    @media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{position:fixed;z-index:30;left:0;top:72px;width:250px;height:calc(100dvh - 72px);transform:translateX(-105%);transition:.25s;box-shadow:10px 0 30px #10182818}.sidebar.mobile-open{transform:translateX(0)}.menu-btn{display:inline-grid;place-items:center}.topbar{padding:0 4%}.hero-art{font-size:70px}}
+    @media(min-width:901px){.menu-btn{display:none}}
+    @media(max-width:650px){main{padding:18px 14px 50px}.home-tools{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.home-tool{padding:13px;gap:9px}.home-tool-icon{width:39px;height:39px;flex-basis:39px;font-size:19px}.home-tool strong{font-size:13px}.home-tool small{font-size:11px}.welcome-strip{align-items:flex-start;flex-direction:column}.hero{padding:25px 21px}.hero-art{display:none}.grid{grid-template-columns:1fr}.selectors{grid-template-columns:1fr}.subject-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-head{align-items:start;flex-direction:column}.schedule-row{grid-template-columns:1fr 1fr}.schedule-row .small-btn{grid-column:1/-1}.brand{font-size:17px}.topbar{height:65px}.sidebar{top:65px;height:calc(100dvh - 65px)}}
+  </style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="row-wrap" style="align-items:center;gap:12px">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <a class="brand" href="#home"><span class="brand-mark">L</span><span>Learnify India</span></a>
+    </div>
+    <div class="top-actions">
+      <button class="ghost-btn" id="loginOpenBtn">Login / Sign up</button>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">☾</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="side-label">LEARNING MENU</div>
+      <button class="nav-link active" data-target="home"><span class="nav-ico">⌂</span>Home</button>
+      <button class="nav-link" data-target="classes"><span class="nav-ico">▦</span>Classes & Subjects</button>
+      <button class="nav-link" data-target="study"><span class="nav-ico">📚</span>Study Material</button>
+      <button class="nav-link" data-target="notes"><span class="nav-ico">✎</span>My Notes</button>
+      <button class="nav-link" data-target="timetable"><span class="nav-ico">▤</span>Timetable</button>
+      <button class="nav-link" data-target="quiz"><span class="nav-ico">❔</span>Quick Quiz</button>
+      <button class="nav-link" data-target="flashcards"><span class="nav-ico">▣</span>Flashcards</button>
+      <div class="side-label" style="margin-top:24px">YOUR ACCOUNT</div>
+      <button class="nav-link" id="sidebarLogin"><span class="nav-ico">◉</span>Login / Sign up</button>
+    </aside>
+
+    <main>
+      <section class="hero" id="home">
+        <div>
+          <div style="font-size:12px;font-weight:800;letter-spacing:1.4px;margin-bottom:12px;color:#dce8ff">YOUR LEARNING PARTNER</div>
+          <h1>Learn smarter.<br>Achieve more.</h1>
+          <p>Explore your classes, revise lessons, organise your study time and test what you know — all from one simple learning space.</p>
+          <button class="primary-btn" onclick="document.getElementById('classes').scrollIntoView({behavior:'smooth'})">Explore Learning →</button>
+        </div>
+        <div class="hero-art" aria-hidden="true">🎓</div>
+      </section>
+
+      <section class="home-tools" aria-label="Quick access to all learning sections">
+        <a class="home-tool" href="#classes"><span class="home-tool-icon">🎓</span><span><strong>Classes & Subjects</strong><small>RBSE · CBSE · Class 5–12</small></span></a>
+        <a class="home-tool" href="#study"><span class="home-tool-icon">📚</span><span><strong>Study Material</strong><small>Notes and chapter revision</small></span></a>
+        <a class="home-tool" href="#notes"><span class="home-tool-icon">📝</span><span><strong>My Notes</strong><small>Write and save notes</small></span></a>
+        <a class="home-tool" href="#timetable"><span class="home-tool-icon">📅</span><span><strong>Timetable</strong><small>Plan your study routine</small></span></a>
+        <a class="home-tool" href="#quiz"><span class="home-tool-icon">🧠</span><span><strong>Quick Quiz</strong><small>Test your knowledge</small></span></a>
+        <a class="home-tool" href="#flashcards"><span class="home-tool-icon">🗂️</span><span><strong>Flashcards</strong><small>Revise key concepts</small></span></a>
+      </section>
+      <div class="welcome-strip"><strong>Everything you need to study, in one place.</strong><span>Choose any section above or scroll down — each tool has its own separate section.</span></div>
+
+      <section class="section" id="classes">
+        <div class="section-head"><div><h2>Classes & Subjects</h2><p>Choose your board and class to explore learning resources.</p></div></div>
+        <div class="card">
+          <div class="selectors">
+            <div class="field"><label for="boardSelect">Select Board</label><select id="boardSelect"><option value="RBSE">RBSE</option><option value="CBSE">CBSE</option></select></div>
+            <div class="field"><label for="classSelect">Select Class</label><select id="classSelect"><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option selected>10</option><option>11</option><option>12</option></select></div>
+            <div class="field hidden" id="streamWrap"><label for="streamSelect">Select Stream</label><select id="streamSelect"><option>Science</option><option>Commerce</option><option>Arts</option></select></div>
+          </div>
+          <div class="subject-grid" id="subjectGrid"></div>
+          <p class="muted" id="subjectHint" style="font-size:13px;margin:14px 0 0">Select a subject to view available material.</p>
+        </div>
+      </section>
+
+      <section class="section" id="study">
+        <div class="section-head"><div><h2>Class 10 Study Material</h2><p>Choose a subject and chapter for revision notes, key points and exam-practice questions.</p></div><span class="ghost-btn" style="font-size:12px">RBSE · CBSE</span></div>
+        <div class="card">
+          <div class="selectors" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+            <div class="field"><label for="materialBoard">Board</label><select id="materialBoard"><option>RBSE</option><option>CBSE</option></select></div>
+            <div class="field"><label for="materialSubject">Subject</label><select id="materialSubject"><option>Science</option><option>Mathematics</option><option>Social Science</option><option>English</option><option>Hindi</option></select></div>
+          </div>
+          <div class="field" style="margin-top:14px"><label>Chapters / Units</label><div id="chapterList" class="subject-grid" style="grid-template-columns:repeat(auto-fit,minmax(190px,1fr))"></div></div>
+        </div>
+        <article class="material-box" id="chapterContent" aria-live="polite">
+          <span class="muted" style="font-size:12px;font-weight:800">CHAPTER 01</span>
+          <h3>Chemical Reactions and Equations</h3>
+          <p>Choose a chapter above to open its revision material.</p>
+        </article>
+        <p class="muted" style="font-size:12px;margin-top:10px">These are original revision notes and practice prompts, not a replacement for the prescribed textbook. RBSE and CBSE 2026–27 assessment details are not identical; verify chapter inclusion and exam weightage with your school syllabus. CBSE Science marks some topics for formative assessment only. Hindi literature also depends on the prescribed course and textbook.</p>
+      </section>
+
+      <section class="section" id="notes">
+        <div class="section-head"><div><h2>My Notes</h2><p>Write and save your own revision notes on this device.</p></div></div>
+        <div class="card"><div class="field"><label for="notesText">Your notes</label><textarea class="notes-area" id="notesText" placeholder="Write your study notes here..."></textarea></div><div class="row-wrap" style="margin-top:12px"><button class="primary-btn" id="saveNotes">Save Notes</button><span class="muted" id="notesStatus" style="font-size:13px;align-self:center"></span></div></div>
+      </section>
+
+      <section class="section" id="timetable">
+        <div class="section-head"><div><h2>Study Timetable</h2><p>Plan your study sessions and keep your routine organised.</p></div></div>
+        <div class="card"><div class="schedule-row"><input type="time" id="studyTime" aria-label="Study time"><input type="text" id="studySubject" placeholder="Subject / task"><button class="primary-btn" id="addSchedule">Add</button></div><div id="scheduleList"></div></div>
+      </section>
+
+      <section class="section" id="quiz">
+        <div class="section-head"><div><h2>Quick Quiz</h2><p>Test your understanding of Chapter 1.</p></div></div>
+        <div class="card" id="quizContainer">
+          <div class="quiz-q"><p>1. Which gas is usually released when a metal reacts with a dilute acid?</p><label class="option"><input type="radio" name="q1" value="a"> Oxygen</label><label class="option"><input type="radio" name="q1" value="b"> Hydrogen</label><label class="option"><input type="radio" name="q1" value="c"> Nitrogen</label></div>
+          <div class="quiz-q"><p>2. Which reaction is represented by CaO + H₂O → Ca(OH)₂?</p><label class="option"><input type="radio" name="q2" value="a"> Combination</label><label class="option"><input type="radio" name="q2" value="b"> Decomposition</label><label class="option"><input type="radio" name="q2" value="c"> Displacement</label></div>
+          <div class="quiz-q"><p>3. Rusting of iron is an example of:</p><label class="option"><input type="radio" name="q3" value="a"> Rancidity</label><label class="option"><input type="radio" name="q3" value="b"> Corrosion</label><label class="option"><input type="radio" name="q3" value="c"> Neutralisation</label></div>
+          <div class="quiz-q"><p>4. A balanced equation has equal numbers of:</p><label class="option"><input type="radio" name="q4" value="a"> Molecules on both sides</label><label class="option"><input type="radio" name="q4" value="b"> Atoms of each element on both sides</label><label class="option"><input type="radio" name="q4" value="c"> Compounds on both sides</label></div>
+          <div class="quiz-q"><p>5. Rancidity is mainly caused by:</p><label class="option"><input type="radio" name="q5" value="a"> Oxidation of fats and oils</label><label class="option"><input type="radio" name="q5" value="b"> Freezing of water</label><label class="option"><input type="radio" name="q5" value="c"> Evaporation</label></div>
+          <button class="primary-btn" id="submitQuiz">Submit Answers</button><button class="ghost-btn" id="resetQuiz" style="margin-left:7px">Reset</button><div class="result" id="quizResult" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section" id="flashcards">
+        <div class="section-head"><div><h2>Flashcards</h2><p>Tap next to revise important science terms.</p></div></div>
+        <div class="card"><div class="flashcard" id="flashcard">What is a chemical reaction?</div><div class="row-wrap" style="justify-content:center;margin-top:14px"><button class="ghost-btn" id="flipCard">Show Answer</button><button class="primary-btn" id="nextCard">Next Card →</button></div></div>
+      </section>
+      <footer>© 2026 Learnify India · Learn Smarter, Every Day</footer>
+    </main>
+  </div>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="authDrawer" aria-label="Student account panel" aria-hidden="true">
+  <div class="drawer-head"><div><div class="muted" style="font-size:12px;font-weight:800;letter-spacing:1px">LEARNIFY INDIA</div><h2>Student Account</h2></div><button class="close-btn" id="closeDrawer" aria-label="Close">×</button></div>
+  <div id="authForms">
+    <p class="muted" style="font-size:14px">Login to your account or create a free student account.</p>
+    <div class="auth-tabs"><button class="active" id="loginTab">Login</button><button id="signupTab">Sign up</button></div>
+    <div class="auth-field hidden" id="nameField"><label for="studentName">Your name</label><input id="studentName" type="text" placeholder="Enter your name" autocomplete="name"></div>
+    <div class="auth-field"><label for="authEmail">Email address</label><input id="authEmail" type="email" placeholder="name@example.com" autocomplete="email"></div>
+    <div class="auth-field"><label for="authPassword">Password</label><input id="authPassword" type="password" placeholder="At least 6 characters" autocomplete="current-password"></div>
+    <button class="primary-btn" id="authSubmit" style="width:100%;margin-top:8px">Login</button>
+    <button class="ghost-btn" id="forgotPassword" style="width:100%;margin-top:10px">Forgot password?</button>
+    <div class="auth-message" id="authMessage" aria-live="polite"></div>
+    <div class="auth-note">You can use the study material, notes, timetable and quiz without logging in. Notes and timetable are saved on this device.</div>
+  </div>
+  <div class="user-box" id="userBox"><div style="font-size:30px">👋</div><h3 id="welcomeName">Welcome!</h3><p class="muted" id="userEmail"></p><button class="ghost-btn" id="logoutBtn">Log out</button></div>
+</aside>
+
+<script>
+(() => {
+  "use strict";
+  const $ = (id) => document.getElementById(id);
+  const safeGet = (key, fallback="") => { try { return localStorage.getItem(key) ?? fallback; } catch { return fallback; } };
+  const safeSet = (key, value) => { try { localStorage.setItem(key, value); return true; } catch { return false; } };
+
+  // Navigation and mobile sidebar
+  const sidebar = $("sidebar");
+  $("menuBtn").addEventListener("click", () => sidebar.classList.toggle("mobile-open"));
+  document.querySelectorAll(".nav-link[data-target]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".nav-link").forEach(x => x.classList.remove("active"));
+      btn.classList.add("active");
+      const target = $(btn.dataset.target);
+      if (target) target.scrollIntoView({behavior:"smooth", block:"start"});
+      sidebar.classList.remove("mobile-open");
+    });
+  });
+
+  // Login panel slides in from the right side, like a modern app drawer
+  const drawer = $("authDrawer"), overlay = $("overlay");
+  function openDrawer(){ drawer.classList.add("show"); overlay.classList.add("show"); drawer.setAttribute("aria-hidden","false"); }
+  function closeDrawer(){ drawer.classList.remove("show"); overlay.classList.remove("show"); drawer.setAttribute("aria-hidden","true"); }
+  $("loginOpenBtn").addEventListener("click", openDrawer);
+  $("sidebarLogin").addEventListener("click", () => { sidebar.classList.remove("mobile-open"); openDrawer(); });
+  $("closeDrawer").addEventListener("click", closeDrawer);
+  overlay.addEventListener("click", closeDrawer);
+  document.addEventListener("keydown", e => { if(e.key === "Escape"){closeDrawer();sidebar.classList.remove("mobile-open");} });
+
+  // Board, class and subjects
+  const boardSelect = $("boardSelect"), classSelect = $("classSelect"), streamWrap = $("streamWrap");
+  const subjectGrid = $("subjectGrid");
+  const subjectSets = {
+    "5":["English","Hindi","Mathematics","Environmental Studies"],
+    "6":["English","Hindi","Mathematics","Science","Social Science"],
+    "7":["English","Hindi","Mathematics","Science","Social Science"],
+    "8":["English","Hindi","Mathematics","Science","Social Science"],
+    "9":["English","Hindi","Mathematics","Science","Social Science"],
+    "10":["English","Hindi","Mathematics","Science","Social Science"],
+    "11":["Physics","Chemistry","Biology","Mathematics","Accountancy","Business Studies","Economics","History","Political Science","Geography"],
+    "12":["Physics","Chemistry","Biology","Mathematics","Accountancy","Business Studies","Economics","History","Political Science","Geography"]
+  };
+  function renderSubjects(){
+    const cls = classSelect.value;
+    streamWrap.classList.toggle("hidden", Number(cls) < 11);
+    let subjects = subjectSets[cls] || [];
+    if(Number(cls) >= 11){
+      const stream = $("streamSelect").value;
+      if(stream === "Science") subjects = ["Physics","Chemistry","Biology","Mathematics","English"];
+      if(stream === "Commerce") subjects = ["Accountancy","Business Studies","Economics","Mathematics","English"];
+      if(stream === "Arts") subjects = ["History","Political Science","Geography","Economics","English"];
+    }
+    subjectGrid.innerHTML = "";
+    subjects.forEach(subject => {
+      const b = document.createElement("button");
+      b.className = "subject"; b.type = "button"; b.textContent = subject + " →";
+      b.addEventListener("click", () => {
+        $("subjectHint").textContent = `${boardSelect.value} · Class ${cls} · ${subject} selected.`;
+        if(cls === "10" && ["Science","Mathematics","Social Science","English","Hindi"].includes(subject)){
+          $("materialBoard").value = boardSelect.value;
+          $("materialSubject").value = subject;
+          renderClass10Material();
+          $("study").scrollIntoView({behavior:"smooth"});
+        }
+      });
+      subjectGrid.appendChild(b);
+    });
+    safeSet("learnifyBoard", boardSelect.value); safeSet("learnifyClass", cls); safeSet("learnifyStream", $("streamSelect").value);
+  }
+  boardSelect.value = safeGet("learnifyBoard","RBSE");
+  classSelect.value = safeGet("learnifyClass","10");
+  $("streamSelect").value = safeGet("learnifyStream","Science");
+  [boardSelect,classSelect,$("streamSelect")].forEach(el => el.addEventListener("change", renderSubjects));
+  renderSubjects();
+  boardSelect.addEventListener("change", () => {
+    if (byId("materialBoard")) { byId("materialBoard").value = boardSelect.value; if (window.renderClass10Material) window.renderClass10Material(); }
+  });
+
+  // Notes are saved locally
+  $("notesText").value = safeGet("learnifyNotes","");
+  $("saveNotes").addEventListener("click", () => {
+    const ok = safeSet("learnifyNotes", $("notesText").value);
+    $("notesStatus").textContent = ok ? "Saved on this device ✓" : "Could not save. Check device storage.";
+  });
+
+  // Timetable
+  let schedule = [];
+  try { schedule = JSON.parse(safeGet("learnifySchedule","[]")); if(!Array.isArray(schedule)) schedule=[]; } catch { schedule=[]; }
+  function renderSchedule(){
+    const list = $("scheduleList"); list.innerHTML = "";
+    if(!schedule.length){ list.innerHTML = '<p class="muted" style="font-size:14px">No study sessions added yet.</p>'; return; }
+    schedule.sort((a,b) => a.time.localeCompare(b.time));
+    schedule.forEach((item,index) => {
+      const row = document.createElement("div"); row.className = "schedule-row";
+      const time = document.createElement("div"); time.textContent = item.time; time.style.padding="10px"; time.style.fontWeight="700";
+      const subject = document.createElement("div"); subject.textContent = item.subject; subject.style.padding="10px";
+      const del = document.createElement("button"); del.className="small-btn"; del.textContent="Remove";
+      del.addEventListener("click",()=>{schedule.splice(index,1);saveSchedule();});
+      row.append(time,subject,del); list.appendChild(row);
+    });
+  }
+  function saveSchedule(){ safeSet("learnifySchedule",JSON.stringify(schedule)); renderSchedule(); }
+  $("addSchedule").addEventListener("click",()=>{
+    const time=$("studyTime").value, subject=$("studySubject").value.trim();
+    if(!time || !subject){ alert("Please enter both time and subject."); return; }
+    schedule.push({time,subject}); $("studySubject").value=""; saveSchedule();
+  });
+  renderSchedule();
+
+  // Quiz
+  const answers = {q1:"b",q2:"a",q3:"b",q4:"b",q5:"a"};
+  $("submitQuiz").addEventListener("click",()=>{
+    let score=0, attempted=0;
+    Object.entries(answers).forEach(([q,answer])=>{
+      const chosen=document.querySelector(`input[name="${q}"]:checked`);
+      if(chosen){attempted++; if(chosen.value===answer)score++;}
+    });
+    $("quizResult").textContent=`Your score: ${score}/5 · Attempted: ${attempted}/5`;
+  });
+  $("resetQuiz").addEventListener("click",()=>{
+    document.querySelectorAll('#quizContainer input[type="radio"]').forEach(i=>i.checked=false);
+    $("quizResult").textContent="";
+  });
+
+  // Flashcards
+  const cards = [
+    ["What is a chemical reaction?","A process in which reactants change into new substances called products."],
+    ["What is a balanced chemical equation?","An equation with the same number of atoms of each element on both sides."],
+    ["What is oxidation?","Addition of oxygen or removal of hydrogen."],
+    ["What is reduction?","Removal of oxygen or addition of hydrogen."],
+    ["What is corrosion?","The gradual damage of a metal due to its reaction with the environment."],
+    ["What is rancidity?","Oxidation of fats and oils that causes unpleasant smell and taste."]
+  ];
+  let cardIndex=0, showingAnswer=false;
+  function showCard(){ $("flashcard").textContent=showingAnswer?cards[cardIndex][1]:cards[cardIndex][0]; $("flipCard").textContent=showingAnswer?"Show Question":"Show Answer"; }
+  $("flipCard").addEventListener("click",()=>{showingAnswer=!showingAnswer;showCard();});
+  $("nextCard").addEventListener("click",()=>{cardIndex=(cardIndex+1)%cards.length;showingAnswer=false;showCard();});
+
+  // Light/dark theme
+  const darkStyle = document.createElement("style");
+  darkStyle.textContent = `body.dark{--ink:#edf2ff;--muted:#a9b4c8;--bg:#101827;--card:#182337;--line:#2b3850;--soft:#23385f;--shadow:0 10px 30px #0003}body.dark .topbar,body.dark .sidebar,body.dark .drawer{background:#151f30}body.dark .icon-btn,body.dark .field select,body.dark .field input,body.dark .field textarea,body.dark .auth-field input,body.dark .subject{background:#182337;color:var(--ink);border-color:var(--line)}body.dark .material-box,body.dark .card{background:#182337}body.dark .equation,body.dark .flashcard,body.dark .auth-note,body.dark .user-box{background:#202e45;color:#edf2ff;border-color:#344766}body.dark .auth-tabs{background:#202e45}body.dark .auth-tabs button.active{background:#344766;color:#fff}body.dark .option{color:#d0d8e8}`;
+  document.head.appendChild(darkStyle);
+  if(safeGet("learnifyDark","") === "yes") document.body.classList.add("dark");
+  $("themeBtn").addEventListener("click",()=>{document.body.classList.toggle("dark");safeSet("learnifyDark",document.body.classList.contains("dark")?"yes":"no");});
+
+  // Firebase authentication. The public web config identifies the project; security is enforced by Firebase rules.
+  const firebaseConfig = {
+    apiKey: "AIzaSyAlRnJF1uKWP2XTSVnS1y5_9jg6hx5J0ns",
+    authDomain: "studybuddy-75864.firebaseapp.com",
+    projectId: "studybuddy-75864",
+    storageBucket: "studybuddy-75864.firebasestorage.app",
+    messagingSenderId: "1011565103905",
+    appId: "1:1011565103905:web:492517c69352e67b2e8c60",
+    measurementId: "G-V1Z0HN1TVD"
+  };
+  let auth = null, createUser=null, signIn=null, sendReset=null, signOutUser=null, onAuth=null, updateUserProfile=null;
+  let authMode = "login";
+  function setAuthMessage(message, success=false){ $("authMessage").textContent=message; $("authMessage").style.color=success?"#15945a":"#c03939"; }
+  function setAuthMode(mode){
+    authMode=mode;
+    $("loginTab").classList.toggle("active",mode==="login");
+    $("signupTab").classList.toggle("active",mode==="signup");
+    $("nameField").classList.toggle("hidden",mode!=="signup");
+    $("authSubmit").textContent=mode==="login"?"Login":"Create account";
+    $("forgotPassword").classList.toggle("hidden",mode!=="login");
+    $("authPassword").autocomplete=mode==="login"?"current-password":"new-password";
+    setAuthMessage("");
+  }
+  $("loginTab").addEventListener("click",()=>setAuthMode("login"));
+  $("signupTab").addEventListener("click",()=>setAuthMode("signup"));
+  $("authSubmit").addEventListener("click",async()=>{
+    const email=$("authEmail").value.trim(), password=$("authPassword").value, name=$("studentName").value.trim();
+    if(!email || !password){setAuthMessage("Please enter your email and password.");return;}
+    if(password.length<6){setAuthMessage("Password must be at least 6 characters.");return;}
+    if(!auth){setAuthMessage("Account service is unavailable right now. You can still use the study material.");return;}
+    $("authSubmit").disabled=true;
+    try{
+      if(authMode==="signup"){
+        if(!name){setAuthMessage("Please enter your name.");return;}
+        const credential=await createUser(auth,email,password);
+        if(updateUserProfile) await updateUserProfile(credential.user,{displayName:name});
+        setAuthMessage("Account created successfully!",true);
+      }else{
+        await signIn(auth,email,password);
+        setAuthMessage("Login successful!",true);
+      }
+    }catch(error){setAuthMessage(error?.message || "Something went wrong. Please try again.");}
+    finally{$("authSubmit").disabled=false;}
+  });
+  $("forgotPassword").addEventListener("click",async()=>{
+    const email=$("authEmail").value.trim();
+    if(!email){setAuthMessage("Enter your email address first.");return;}
+    if(!auth || !sendReset){setAuthMessage("Password reset is unavailable right now.");return;}
+    try{await sendReset(auth,email);setAuthMessage("Password reset email sent. Check your inbox.",true);}
+    catch(error){setAuthMessage(error?.message || "Could not send reset email.");}
+  });
+  $("logoutBtn").addEventListener("click",async()=>{
+    if(!auth || !signOutUser)return;
+    try{await signOutUser(auth);setAuthMessage("Logged out successfully.",true);}
+    catch(error){setAuthMessage(error?.message || "Could not log out.");}
+  });
+  function updateAccount(user){
+    const loggedIn=!!user;
+    $("authForms").classList.toggle("hidden",loggedIn);
+    $("userBox").style.display=loggedIn?"block":"none";
+    if(user){$("welcomeName").textContent=`Welcome, ${user.displayName || "Student"}!`;$("userEmail").textContent=user.email || "";}
+    $("loginOpenBtn").textContent=loggedIn?"My Account":"Login / Sign up";
+  }
+  import("https://www.gstatic.com/firebasejs/13.2.0/firebase-app.js")
+    .then(async appSdk=>{
+      const authSdk=await import("https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js");
+      const app=appSdk.initializeApp(firebaseConfig);
+      auth=authSdk.getAuth(app);
+      createUser=authSdk.createUserWithEmailAndPassword;
+      signIn=authSdk.signInWithEmailAndPassword;
+      sendReset=authSdk.sendPasswordResetEmail;
+      signOutUser=authSdk.signOut;
+      onAuth=authSdk.onAuthStateChanged;
+      updateUserProfile=authSdk.updateProfile;
+      onAuth(auth,updateAccount);
+    })
+    .catch(error=>{console.warn("Firebase authentication did not initialise:",error);setAuthMessage("Account service could not connect. Study resources remain available.");});
+})();
+</script>
+
+<script>
+(() => {
+  "use strict";
+  const byId = id => document.getElementById(id);
+  const chapterData = {
+    "Science": [
+      ["Chemical Reactions and Equations","A chemical reaction changes reactants into new products. A balanced equation has equal numbers of each type of atom on both sides.","Balance equations by changing coefficients, never subscripts. Learn combination, decomposition, displacement, double displacement, precipitation, oxidation and reduction.","Define a balanced chemical equation. Explain four types of reactions with examples. What is oxidation and reduction?"],
+      ["Acids, Bases and Salts","Acids produce H⁺ ions and bases produce OH⁻ ions in aqueous solution. Indicators and the pH scale help identify acidic and basic solutions.","pH below 7 is acidic, 7 is neutral and above 7 is basic. Study neutralisation and common salts such as baking soda, washing soda, bleaching powder and plaster of Paris.","What is pH? Explain neutralisation. Write two uses each of baking soda and washing soda."],
+      ["Metals and Non-metals","Metals are generally lustrous, malleable and good conductors; non-metals generally show contrasting properties. Reactivity determines how metals react.","Learn the reactivity series, ionic bond formation, properties of ionic compounds, extraction basics and corrosion prevention.","Why is sodium stored in kerosene? Explain ionic bond formation. How can rusting be prevented?"],
+      ["Carbon and Its Compounds","Carbon forms covalent bonds and long chains because of its tetravalency and catenation. Hydrocarbons may be saturated or unsaturated.","Revise homologous series, functional groups, ethanol, ethanoic acid, combustion, oxidation, addition and substitution reactions, soaps and detergents.","Why does carbon form covalent bonds? Differentiate saturated and unsaturated hydrocarbons. Explain cleansing action of soap."],
+      ["Life Processes","Living organisms maintain life through nutrition, respiration, transport and excretion. Plants and animals use specialised structures for these processes.","Compare autotrophic and heterotrophic nutrition. Learn human digestive, respiratory, circulatory and excretory systems; transport in plants.","Explain photosynthesis. Describe double circulation in humans. How do plants transport water and food?"],
+      ["Control and Coordination","Organisms coordinate activities through the nervous system and chemical messengers. Plants respond to stimuli through movements and hormones.","Study neuron structure, reflex arc, brain and spinal cord, endocrine glands, hormones and tropic movements.","Draw and label a neuron. Explain reflex action. Differentiate nervous and hormonal coordination."],
+      ["Reproduction in Organisms","Reproduction produces new individuals. Asexual reproduction involves one parent, while sexual reproduction involves formation and fusion of gametes.","Learn fission, budding, fragmentation, regeneration, vegetative propagation, human reproductive systems, fertilisation and reproductive health.","Differentiate asexual and sexual reproduction. Explain fertilisation in humans. What is vegetative propagation?"],
+      ["Heredity","Heredity is the transmission of traits from parents to offspring through genes. Variations arise due to genetic and environmental factors.","Revise genes, chromosomes, dominant and recessive traits, Mendel's monohybrid cross and sex determination in humans.","What are dominant and recessive traits? Explain Mendel's monohybrid cross. How is sex determined in humans?"],
+      ["Light – Reflection and Refraction","Light changes direction when reflected from a surface or refracted between media. Spherical mirrors and lenses form images according to their geometry.","Learn mirror and lens formulae, sign convention, magnification, ray diagrams and laws of reflection and refraction.","State laws of reflection. Draw ray diagrams for a convex lens. Solve a numerical using the mirror formula."],
+      ["The Human Eye and the Colourful World","The eye forms images on the retina and adjusts focus through accommodation. Atmospheric effects explain phenomena such as scattering and dispersion.","Study parts of the eye, near and far points, myopia, hypermetropia, correction with lenses, dispersion and scattering.","What is accommodation? Explain myopia and its correction. Why is the sky blue?"],
+      ["Electricity","Electric current is the rate of flow of charge. Potential difference drives current, and resistance opposes its flow.","Use V = IR, R = ρl/A, series and parallel resistance, electrical power P = VI and heating effect H = I²Rt.","State Ohm's law. Compare series and parallel combinations. Calculate electrical power from voltage and current."],
+      ["Magnetic Effects of Electric Current","Electric current produces a magnetic field. Electromagnets and electric motors use the interaction between magnetic fields and current.","Learn magnetic field lines, right-hand thumb rule, force on a current-carrying conductor, Fleming's left-hand rule, domestic circuits and safety devices.","Draw magnetic field lines around a straight conductor. State Fleming's left-hand rule. What is the function of an electric fuse?"],
+      ["Our Environment","Ecosystems contain producers, consumers and decomposers. Energy flows through food chains while materials are recycled.","Learn trophic levels, food webs, 10% law, biodegradable and non-biodegradable waste, ozone layer and ecosystem balance.","What is a food chain? Explain the 10% law. Differentiate biodegradable and non-biodegradable substances."]
+    ],
+    "Mathematics": [
+      ["Real Numbers","The Fundamental Theorem of Arithmetic states that every composite number has a unique prime factorisation, apart from order.","Practise prime factorisation, HCF and LCM, and proofs that √2, √3 and √5 are irrational.","State the Fundamental Theorem of Arithmetic. Find HCF and LCM using prime factorisation. Prove that √2 is irrational."],
+      ["Polynomials","A polynomial is an algebraic expression with non-negative integer powers of the variable. Its zeroes are values that make it equal to zero.","For ax² + bx + c, sum of zeroes = −b/a and product = c/a. Connect zeroes with the graph.","Find zeroes of a quadratic polynomial and verify the relationship between zeroes and coefficients."],
+      ["Pair of Linear Equations in Two Variables","Two linear equations represent two lines. Their intersection gives a unique solution when the lines meet at one point.","Use graphical, substitution and elimination methods. For a₁/a₂ ≠ b₁/b₂ there is a unique solution.","Solve a pair of equations by elimination. State conditions for unique, no and infinitely many solutions."],
+      ["Quadratic Equations","A quadratic equation has the form ax² + bx + c = 0, where a is not zero.","Solve by factorisation or the quadratic formula. Discriminant D = b² − 4ac determines the nature of real roots.","Solve a quadratic equation using the formula. Explain the role of the discriminant."],
+      ["Arithmetic Progressions","An arithmetic progression is a sequence with a constant common difference between consecutive terms.","nth term: aₙ = a + (n−1)d. Sum: Sₙ = n/2[2a + (n−1)d].","Find the nth term and sum of the first n terms of an AP. Solve a word problem based on AP."],
+      ["Triangles","Similar triangles have equal corresponding angles and proportional corresponding sides.","Learn similarity criteria AA, SAS and SSS, the Basic Proportionality Theorem and Pythagoras theorem.","State a criterion for similarity. Prove the Basic Proportionality Theorem. Apply Pythagoras theorem."],
+      ["Coordinate Geometry","Coordinate geometry uses ordered pairs to describe points on a plane and calculate geometric measurements.","Distance formula: √[(x₂−x₁)²+(y₂−y₁)²]. Section formula for internal division uses weighted coordinates.","Find distance between two points. Find the coordinates of a point dividing a line segment in a given ratio."],
+      ["Introduction to Trigonometry","Trigonometric ratios relate the sides and angles of a right-angled triangle.","sin θ = perpendicular/hypotenuse; cos θ = base/hypotenuse; tan θ = perpendicular/base. Learn reciprocal ratios and identities.","Write six trigonometric ratios. Prove or use sin²θ + cos²θ = 1."],
+      ["Some Applications of Trigonometry","Heights and distances can be calculated using angles of elevation and depression.","Draw a labelled right triangle, identify the angle and choose the appropriate trigonometric ratio.","Define angle of elevation. Solve a height-and-distance problem using tan θ."],
+      ["Circles","A tangent touches a circle at exactly one point. The radius through the point of contact is perpendicular to the tangent.","Tangents drawn from an external point to a circle are equal in length.","State the tangent-radius theorem. Prove that two tangents from an external point are equal."],
+      ["Areas Related to Circles","Circular regions can be measured using radius, circumference and sector angle.","Area = πr²; circumference = 2πr; sector area = (θ/360°)πr².","Find the area of a sector and the length of an arc. Solve a combined-shape question."],
+      ["Surface Areas and Volumes","Three-dimensional solids have measurable curved or total surface areas and volumes.","Revise formulae for cube, cuboid, cylinder, cone, sphere and hemisphere, including combinations and conversions.","Find the volume of a cone or sphere. Solve a problem involving a combination of solids."],
+      ["Statistics","Statistics organises numerical data and summarises it using measures of central tendency.","For grouped data, mean may be found by direct, assumed mean or step-deviation methods. Learn median and mode.","Calculate mean, median and mode for grouped data. Interpret a frequency table."],
+      ["Probability","Probability measures how likely an event is to occur.","For equally likely outcomes, P(E) = favourable outcomes / total outcomes. 0 ≤ P(E) ≤ 1.","Find the probability of getting a particular number on a die. Explain complementary events."]
+    ],
+    "Social Science": [
+      ["History: The Rise of Nationalism in Europe","The French Revolution spread ideas of citizenship and nationhood. Liberal and nationalist movements reshaped Europe during the nineteenth century.","Revise the French Revolution, liberalism, the Congress of Vienna, unification of Germany and Italy, and the role of culture in nationalism.","How did the French Revolution promote nationalism? Explain the unification of Germany or Italy."],
+      ["History: Nationalism in India","Indian nationalism grew through anti-colonial movements, mass participation and shared symbols. Gandhi led major movements using satyagraha and non-violence.","Study the Rowlatt Act, Jallianwala Bagh, Non-Cooperation, Civil Disobedience, Salt March and different social groups in the movement.","Why was the Non-Cooperation Movement launched? Explain the significance of the Salt March."],
+      ["History: The Making of a Global World","Trade, migration, technology and colonialism connected societies over time and shaped the modern global economy.","Understand pre-modern trade routes, nineteenth-century migration, indentured labour, the Great Depression and post-war economic institutions. Check the board's assessed subtopics.","How did trade connect the pre-modern world? Explain the impact of the Great Depression."],
+      ["History: The Age of Industrialisation","Industrialisation changed production, labour, markets and everyday life. In India, factories developed alongside older forms of production.","Revise proto-industrialisation, factories, workers, industrial growth in India and the role of advertisements. Check whether your board assesses this in the final exam or internally.","What was proto-industrialisation? How did industrialisation affect workers in India?"],
+      ["History: Print Culture and the Modern World","Printing transformed the spread of knowledge, religious debate, public opinion and social reform.","Study early printing in East Asia, Gutenberg, print revolution in Europe, print in India and its role in reform and nationalism.","How did print culture influence the Reformation? Explain the role of print in India."],
+      ["Geography: Resources and Development","Resources are classified by origin, exhaustibility, ownership and development. Sustainable planning is needed to use them responsibly.","Learn resource planning, land use, soil types, soil erosion and conservation methods.","Why is resource planning important? Describe major soil types and soil conservation methods."],
+      ["Geography: Forest and Wildlife Resources","Biodiversity supports ecological balance and livelihoods. Conservation protects species and habitats from overuse and destruction.","Study categories of species, causes of depletion, conservation programmes and community participation.","Why should forests and wildlife be conserved? Explain community conservation efforts."],
+      ["Geography: Water Resources","Fresh water is limited and unevenly distributed. Conservation and careful management are essential for people, agriculture and ecosystems.","Revise water scarcity, multipurpose projects, dams, rainwater harvesting and traditional systems.","What causes water scarcity? Explain advantages and disadvantages of multipurpose projects."],
+      ["Geography: Agriculture","Agriculture provides food, raw materials and employment. Crops depend on climate, soil, irrigation and farming practices.","Study types of farming, cropping seasons, major crops, technological changes and challenges faced by farmers.","Differentiate Rabi and Kharif crops. Describe conditions required for rice or wheat."],
+      ["Geography: Minerals and Energy Resources","Minerals are essential raw materials, while energy resources may be conventional or non-conventional.","Learn modes of occurrence, major minerals, coal, petroleum, natural gas, solar, wind and conservation of energy.","Differentiate conventional and non-conventional energy sources. Why should minerals be conserved?"],
+      ["Geography: Manufacturing Industries","Manufacturing adds value to raw materials and supports economic development, jobs and trade.","Study industrial location factors, agro-based and mineral-based industries, industrial pollution and control measures.","Why are manufacturing industries important? Explain measures to reduce industrial pollution."],
+      ["Geography: Lifelines of National Economy","Transport, communication and trade connect regions and support economic activity.","Revise roadways, railways, pipelines, waterways, airways, communication and international trade. Map-only assessment may apply to some boards.","How do transport and communication support the economy? Name major modes of transport."],
+      ["Political Science: Power-sharing","Power-sharing reduces conflict and strengthens democracy by distributing authority among different groups and institutions.","Study Belgium and Sri Lanka, major forms of power-sharing and the prudential and moral reasons for it.","Why is power-sharing desirable? Compare the approaches of Belgium and Sri Lanka."],
+      ["Political Science: Federalism","Federalism divides power between different levels of government, with constitutionally defined jurisdictions.","Learn features of federalism, language policy, centre-state relations, decentralisation and local self-government.","Explain key features of federalism. How has decentralisation strengthened democracy in India?"],
+      ["Political Science: Gender, Religion and Caste","Social divisions influence politics. Democratic politics must promote equality and prevent discrimination.","Study gender division, feminist movements, communalism, secularism and caste inequalities.","What is communalism? Explain how caste can influence politics."],
+      ["Political Science: Political Parties","Political parties contest elections, form governments, shape policies and connect citizens with institutions.","Revise functions of parties, party systems, challenges and reforms in India.","Explain any five functions of political parties. What challenges do political parties face?"],
+      ["Political Science: Outcomes of Democracy","Democracy is judged by accountable government, responsiveness, legitimacy, economic outcomes and dignity of citizens.","Study accountability, transparency, inequality, social diversity, freedom and dignity.","How does democracy ensure accountability? Explain its expected outcomes."],
+      ["Economics: Development","Development includes income as well as health, education, equality, freedom and sustainability.","Compare development goals, per capita income, public facilities, Human Development indicators and sustainability.","Why do different people have different development goals? Why is per capita income not sufficient alone?"],
+      ["Economics: Sectors of the Indian Economy","Economic activities are grouped into primary, secondary and tertiary sectors. Employment and output patterns reveal structural change.","Study GDP, organised and unorganised sectors, public and private sectors and underemployment.","Differentiate the three sectors. Why is the tertiary sector growing in India?"],
+      ["Economics: Money and Credit","Money acts as a medium of exchange. Credit can support production but may also create debt traps when terms are unfavourable.","Learn modern forms of money, banks, deposits, loans, collateral, formal and informal credit and self-help groups.","How does money solve the problem of double coincidence of wants? Compare formal and informal credit."],
+      ["Economics: Globalisation and the Indian Economy","Globalisation links economies through trade, investment, technology and movement of information. Multinational companies play a major role.","Study MNCs, foreign investment, liberalisation, trade barriers, WTO and fair globalisation.","What is globalisation? Explain factors that have enabled globalisation."],
+      ["Economics: Consumer Rights (Project)","Consumer awareness helps people make informed choices and seek redressal against unfair trade practices.","Revise consumer rights, responsibilities, quality marks, bills, complaint procedures and consumer commissions as a project topic.","List important consumer rights. Why should consumers ask for a bill?"]
+    ],
+    "English": [
+      ["Reading Comprehension","Reading questions test understanding, inference, vocabulary and the ability to interpret factual or discursive passages.","Read the questions first, identify evidence in the passage and answer in your own words. Support inferences with details from the text.","Practise one factual passage and one discursive passage. Identify the central idea and the writer's tone."],
+      ["Grammar: Tenses, Modals and Determiners","Grammar tests accurate use of verb forms, helping verbs and words that specify nouns.","Revise present, past and future forms, modal verbs, articles, quantifiers and subject-verb agreement.","Correct errors in five sentences using tenses and subject-verb agreement."],
+      ["Reported Speech","Reported speech communicates what someone said without repeating the exact words.","Practise changes in pronouns, tense, time expressions and word order for statements, questions, commands and requests.","Change five direct speech sentences into reported speech."],
+      ["Formal Letter","A formal letter communicates a request, complaint, enquiry or opinion in a clear and respectful format.","Use sender's address, date, receiver's address, subject, salutation, concise body and formal closing. Follow the word limit set by your board.","Write a letter to the municipal authority about poor waste management."],
+      ["Analytical Paragraph","An analytical paragraph describes and interprets information shown in a chart, graph, table or map.","Begin with an overview, compare key figures, identify trends and avoid unsupported opinions. Use clear linking words.","Write a paragraph comparing two years of data from a bar graph."],
+      ["Literature: A Letter to God","The story explores faith, hope and irony through Lencho's response to the loss of his crop.","Focus on Lencho's character, his faith, the postmaster's kindness and the story's irony.","Why did Lencho write a letter to God? Explain the irony at the end."],
+      ["Literature: Nelson Mandela – Long Walk to Freedom","Mandela reflects on freedom, courage, equality and the long struggle against apartheid.","Understand personal freedom versus collective freedom, courage and the meaning of true liberty.","What does Mandela say about courage? Why is freedom indivisible?"],
+      ["Literature: Stories About Flying","The two flying stories explore fear, courage, confidence and mystery through experiences of flight.","Compare the young seagull's fear with the pilot's mysterious experience. Use textual evidence.","How did the young seagull overcome his fear?"],
+      ["Literature: From the Diary of Anne Frank","Anne uses her diary as a trusted friend and reflects on school, family and her inner thoughts.","Study Anne's personality, her relationship with writing and the value of self-expression.","Why did Anne decide to keep a diary? Describe her relationship with teachers."],
+      ["Literature: Glimpses of India","The chapters present distinctive traditions, landscapes, food and livelihoods from different parts of India.","Revise the baker of Goa, Coorg and Assam's tea gardens; note cultural details and descriptive language.","What makes Coorg special? Describe the traditional baker of Goa."],
+      ["Literature: Mijbil the Otter","The account describes the author's relationship with an otter and the animal's playful behaviour.","Focus on Mijbil's habits, the bond with the narrator and the challenges of travelling with a pet.","Describe Mijbil's behaviour and the narrator's affection for him."],
+      ["Literature: Madam Rides the Bus","Valli's first bus journey reflects curiosity, independence and a child's changing understanding of life.","Study Valli's planning, confidence, observations and reaction to the sight of the dead cow.","How did Valli plan her journey? What changed her mood on the return trip?"],
+      ["Literature: The Sermon at Benares","The lesson teaches that death is universal and attachment can deepen suffering.","Understand Kisa Gotami's grief and the Buddha's lesson about accepting the truth of life.","What did Kisa Gotami learn from the mustard seeds?"],
+      ["Literature: The Proposal","The play uses humour and argument to show how pride and trivial disputes can disrupt relationships.","Study the characters, comic conflict, marriage proposal and dramatic irony.","Why do Lomov and Natalya quarrel? Explain the humour in the play."],
+      ["Poetry: Dust of Snow and Fire and Ice","The poems show how small experiences can change a mood and how destructive emotions can affect the world.","Identify imagery, symbolism, contrast, tone and the central message of each poem.","How does the dust of snow change the poet's mood? What do fire and ice symbolise?"],
+      ["Poetry: A Tiger in the Zoo and How to Tell Wild Animals","The poems use humour and contrast to explore wild animals and captivity.","Study poetic devices, tone, imagery and the contrast between animals in natural and confined spaces.","How is the tiger's life in the zoo different from life in the forest?"],
+      ["Poetry: The Ball Poem and Amanda!","The poems explore loss, growing up, responsibility and the desire for freedom.","Focus on symbolism, imagination, repetition and the speaker's attitude.","What does the lost ball teach the boy? Why does Amanda escape into imagination?"],
+      ["Poetry: The Trees, Fog, The Tale of Custard the Dragon and For Anne Gregory","These poems use personification, imagery and symbolism to explore freedom, nature, courage and inner beauty.","Revise the central idea, poetic devices, speaker and tone of each poem.","How is fog described? What does Custard's action reveal about courage?"],
+      ["Footprints Without Feet: A Triumph of Surgery","The story uses humour to show how overfeeding and lack of exercise can harm a pet.","Study Tricki's condition, the treatment at the surgery and the role of discipline.","Why was Tricki ill? How did the veterinary surgeon help him?"],
+      ["Footprints Without Feet: The Thief's Story","The story explores trust, kindness and the possibility of personal change.","Understand Hari Singh's motives, Anil's trust and the significance of the returned money.","Why did Hari Singh return to Anil? What does the story say about trust?"],
+      ["Footprints Without Feet: The Midnight Visitor","A detective story showing how intelligence and calm thinking can defeat danger.","Study Ausable's quick thinking, Max's assumptions and the use of the balcony story.","How did Ausable get rid of Max?"],
+      ["Footprints Without Feet: A Question of Trust","The story uses irony to show how a thief can himself be deceived.","Focus on Horace Danby's habits, the young woman's trick and the final consequence.","Why did Horace Danby trust the woman? What mistake did he make?"],
+      ["Footprints Without Feet: Footprints Without Feet","The story explores the consequences of scientific discovery without responsibility.","Study Griffin's invisibility, his behaviour and the ethical misuse of science.","Why did Griffin become a lawless person?"],
+      ["Footprints Without Feet: The Making of a Scientist","The account shows how curiosity, observation and hard work contribute to scientific achievement.","Study Richard Ebright's interests, experiments, guidance and persistence.","Which qualities helped Richard become a scientist?"],
+      ["Footprints Without Feet: The Necklace","The story explores vanity, pride, sacrifice and irony through a lost necklace.","Understand Matilda's desire, the years of hardship and the final revelation.","How did the necklace change Matilda's life? Explain the irony."],
+      ["Footprints Without Feet: Bholi","The story highlights the power of education, confidence and self-respect.","Study Bholi's transformation, the teacher's role and her decision at the wedding.","How did education change Bholi? Why did she refuse to marry Bishamber?"],
+      ["Footprints Without Feet: The Book That Saved the Earth","The play uses humour and science fiction to show how a misunderstanding can avert an invasion.","Revise Think-Tank's assumptions, the books and the humorous ending.","How did books save the Earth in the play?"]
+    ],
+    "Hindi": [
+      ["अपठित बोध","अपठित गद्यांश या पद्यांश को ध्यान से पढ़कर मुख्य विचार, तथ्य, शब्दार्थ और निष्कर्ष समझना आवश्यक है।","पहले प्रश्न पढ़ें, फिर गद्यांश में उत्तर से जुड़े संकेत खोजें। उत्तर अपने शब्दों में और संक्षेप में लिखें।","गद्यांश का केंद्रीय भाव लिखिए। लेखक का उद्देश्य और दो मुख्य तथ्य बताइए।"],
+      ["व्याकरण: पदबंध और समास","व्याकरण में शब्दों के समूह, उनके कार्य और शब्द-रचना के नियमों का अध्ययन किया जाता है।","पदबंध के प्रकार पहचानें। समास में समस्त पद, विग्रह और समास का भेद समझें।","पदबंध की परिभाषा उदाहरण सहित लिखिए। समास-विग्रह करके भेद बताइए।"],
+      ["व्याकरण: वाक्य-रचना और रूपांतरण","वाक्य के अर्थ और संरचना को समझकर सरल, संयुक्त और मिश्र वाक्यों में परिवर्तन किया जाता है।","वाक्य के उद्देश्य, रचना और अर्थ को बदले बिना रूपांतरण का अभ्यास करें।","दिए गए वाक्यों को सरल, संयुक्त और मिश्र वाक्य में बदलिए।"],
+      ["व्याकरण: मुहावरे और लोकोक्तियाँ","मुहावरे विशेष अर्थ देने वाले वाक्यांश हैं और लोकोक्तियाँ अनुभव पर आधारित प्रचलित कथन हैं।","अर्थ याद करने के साथ प्रत्येक मुहावरे और लोकोक्ति का सही संदर्भ में वाक्य बनाएं।","पाँच मुहावरों के अर्थ लिखकर वाक्य बनाइए।"],
+      ["लेखन: अनुच्छेद और औपचारिक पत्र","लेखन में विषय की स्पष्टता, क्रमबद्ध विचार, उचित भाषा और सही प्रारूप महत्वपूर्ण हैं।","भूमिका, मुख्य विचार और निष्कर्ष का क्रम रखें। पत्र में पता, दिनांक, विषय, संबोधन और समापन लिखें।","स्वच्छता के महत्व पर अनुच्छेद लिखिए। प्रधानाचार्य को अवकाश हेतु पत्र लिखिए।"],
+      ["साहित्य: गद्य और पद्य पाठों का अध्ययन","साहित्य के प्रत्येक पाठ में लेखक/कवि का उद्देश्य, केंद्रीय भाव, पात्र, भाषा-शैली और संदेश समझना चाहिए।","अपने विद्यालय द्वारा निर्धारित हिंदी पुस्तक के प्रत्येक पाठ का सार, शब्दार्थ, लेखक परिचय और प्रश्नोत्तर तैयार करें।","किसी निर्धारित पाठ का सार लिखिए और उसके मुख्य संदेश की व्याख्या कीजिए।"]
+    ]
+  };
+
+  const subject = byId("materialSubject");
+  const board = byId("materialBoard");
+  const list = byId("chapterList");
+  const content = byId("chapterContent");
+  let currentIndex = 0;
+
+  function escapeHTML(value){
+    return String(value).replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+  }
+  function renderChapter(index){
+    const items = chapterData[subject.value] || [];
+    const item = items[index];
+    if(!item) return;
+    currentIndex = index;
+    [...list.children].forEach((el,i)=>el.classList.toggle("selected-chapter",i===index));
+    content.innerHTML = `
+      <span class="muted" style="font-size:12px;font-weight:800">${escapeHTML(subject.value.toUpperCase())} · CHAPTER ${String(index+1).padStart(2,"0")}</span>
+      <h3 style="margin-top:7px">${escapeHTML(item[0])}</h3>
+      <h4>Quick Revision Notes</h4><p>${escapeHTML(item[1])}</p>
+      <h4>Key Points to Remember</h4><p>${escapeHTML(item[2])}</p>
+      <h4>Important Practice Questions</h4><ol>${item[3].split(/(?<=[.?])\\s+(?=[A-Z])/).map(q=>`<li>${escapeHTML(q)}</li>`).join("")}</ol>
+      <div class="row-wrap" style="margin-top:18px;justify-content:space-between">
+        <button class="ghost-btn" id="previousChapter" ${index===0?"disabled":""}>← Previous</button>
+        <span class="muted" style="font-size:12px;align-self:center">${index+1} of ${items.length}</span>
+        <button class="primary-btn" id="nextChapter" ${index===items.length-1?"disabled":""}>Next →</button>
+      </div>`;
+    byId("previousChapter").addEventListener("click",()=>renderChapter(index-1));
+    byId("nextChapter").addEventListener("click",()=>renderChapter(index+1));
+  }
+  function renderClass10Material(){
+    const items = chapterData[subject.value] || [];
+    list.innerHTML = "";
+    items.forEach((item,index)=>{
+      const button=document.createElement("button");
+      button.type="button";button.className="subject";button.textContent=`${String(index+1).padStart(2,"0")}. ${item[0]}`;
+      button.addEventListener("click",()=>renderChapter(index));
+      list.appendChild(button);
+    });
+    renderChapter(0);
+    byId("study").querySelector(".section-head p").textContent = `${board.value} · Class 10 · ${subject.value} · ${items.length} study units`;
+  }
+  subject.addEventListener("change",renderClass10Material);
+  board.addEventListener("change",renderClass10Material);
+  const savedBoard = localStorage.getItem("learnifyBoard");
+  if(savedBoard && ["RBSE","CBSE"].includes(savedBoard)) board.value=savedBoard;
+  renderClass10Material();
+  window.renderClass10Material = renderClass10Material;
+})();
+</script>
+<style>
+  .selected-chapter{border-color:#155eef!important;background:#edf3ff!important;color:#155eef!important}
+  body.dark .selected-chapter{background:#23385f!important;color:#fff!important}
+  button:disabled{opacity:.45;cursor:not-allowed}
+</style>
+
+</body>
+</html>
